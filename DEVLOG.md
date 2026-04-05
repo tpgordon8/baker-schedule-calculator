@@ -139,13 +139,64 @@ Output: Updated schedule with new target time
 
 ---
 
-## Next Steps (Phase 2 & Beyond)
+---
 
-### Phase 2: Step Tracker Enhancements
-- [ ] Add countdown timer to next step
-- [ ] Visual progress bar
-- [ ] Better adjustment modal UX
-- [ ] Step detail notes
+# PHASE 2: RESUME BAKE & MID-PROCESS CHECKPOINT ✅ COMPLETE
+
+## Completed Features (2026-04-05)
+
+### Phase 2A: Resume Bake & Pace Display
+- ✅ Pace calculation composable (`usePaceCalculation.js`)
+- ✅ Calculate on-pace status (ahead/behind/on-track)
+- ✅ Projected completion time calculation
+- ✅ ResumeView component for mid-bake progress checking
+- ✅ Manual step selection with elapsed time input
+- ✅ Pace message formatting with time variance
+- ✅ `/resume` route for checking progress
+
+### Phase 2B: Adjustment Options (Fast-track & Extend)
+- ✅ AdjustmentOptions component with two strategies
+- ✅ Fast-track: reduce bulk/final proof to meet new target
+- ✅ Extend: add time to bulk or final fermentation  
+- ✅ Real-time validation of reduction feasibility
+- ✅ Automatic schedule recalculation on adjustment
+- ✅ Integrated adjustment modal into ResumeView
+- ✅ Handle both strategy types with recalculation
+
+### Phase 2C: Auto-save & Resume Management
+- ✅ Enable Pinia persistence for activeBake store
+- ✅ Auto-save active bakes to localStorage
+- ✅ Survive page refresh - resume where you left off
+- ✅ Improved home page banner with active bake info
+- ✅ Quick navigation: Check Progress, Track Steps, Start New
+- ✅ Better UX with emoji icons and clear CTAs
+- ✅ Show pace info in tracker view
+- ✅ Link between tracker and resume pages
+
+## Real-World Scenario Support
+
+**Scenario: Mid-bake adjustment**
+1. Started bake at 7am, targeting 8pm finish
+2. At 2pm, user checks progress
+3. App shows: "Behind by 1h, projecting 9pm finish"
+4. User chooses: Fast-track final proof by 1h
+5. New schedule recalculates, shows 8pm finish possible
+6. Changes persist if page refreshes
+
+## Git Commits for Phase 2
+- `d8b8f06` - Phase 2A: Resume Bake & Pace Calculation
+- `198cd4b` - Phase 2B: Adjustment Options (Fast-track & Extend)
+- `2b16034` - Phase 2C: Auto-save & Resume Management
+
+---
+
+## Next Steps (Phase 3 & Beyond)
+
+### Phase 3: Template Management (Future)
+- [ ] Edit existing templates
+- [ ] Delete templates
+- [ ] Clone templates for variations
+- [ ] Share templates (JSON export/import)
 
 ### Phase 3: Template Management
 - [ ] Edit/delete templates

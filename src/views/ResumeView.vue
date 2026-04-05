@@ -74,7 +74,7 @@
 
       <!-- Action Buttons -->
       <div v-if="paceData" class="flex gap-2 mt-4">
-        <button @click="goToAdjustments" class="btn btn-primary flex-1">
+        <button @click="showAdjustmentModal" class="btn btn-primary flex-1">
           Adjust Target
         </button>
         <button @click="resetCalculation" class="btn flex-1">
@@ -87,6 +87,16 @@
         Back to Tracker
       </button>
     </div>
+
+    <!-- Adjustment Modal -->
+    <AdjustmentOptions
+      :is-showing="showAdjustments"
+      :current-time="new Date()"
+      :original-target="new Date(activeBakeStore.bake.originalTargetTime)"
+      :remaining-steps="remainingSteps"
+      @apply="handleAdjustment"
+      @cancel="showAdjustments = false"
+    />
   </div>
 </template>
 
@@ -96,6 +106,7 @@ import { useRouter, RouterLink } from 'vue-router'
 import { useActiveBakeStore } from '../stores/activeBake'
 import { useScheduleCalculator } from '../composables/useScheduleCalculator'
 import { usePaceCalculation } from '../composables/usePaceCalculation'
+import AdjustmentOptions from '../components/AdjustmentOptions.vue'
 
 const router = useRouter()
 const activeBakeStore = useActiveBakeStore()
@@ -106,9 +117,16 @@ const selectedStepId = ref('')
 const hoursOnStep = ref(0)
 const minutesOnStep = ref(0)
 const paceData = ref(null)
+const showAdjustments = ref(false)
 
 const availableSteps = computed(() => {
   return activeBakeStore.schedule
+})
+
+const remainingSteps = computed(() => {
+  if (!selectedStepId.value || !activeBakeStore.schedule) return []
+  const currentIndex = activeBakeStore.schedule.findIndex(s => s.stepId === selectedStepId.value)
+  return activeBakeStore.schedule.slice(currentIndex + 1)
 })
 
 function formatElapsed(startTime) {
@@ -147,9 +165,55 @@ function calculatePaceStatus() {
   }
 }
 
-function goToAdjustments() {
-  // Navigate to adjustment view (will implement in Phase 2B)
-  router.push('/tracker')
+function showAdjustmentModal() {
+  showAdjustments.value = true
+}
+
+function handleAdjustment(adjustment) {
+  if (adjustment.type === 'fast-track') {
+    // Fast-track: reduce remaining steps to meet new target
+    activeBakeStore.adjustTarget(adjustment.newTarget)
+
+    // Recalculate pace with new target
+    const totalElapsedMinutes = hoursOnStep.value * 60 + minutesOnStep.value
+    const pace = calculatePace(
+      activeBakeStore.schedule,
+      selectedStepId.value,
+      totalElapsedMinutes,
+      activeBakeStore.bake.actualStartTime,
+      adjustment.newTarget
+    )
+
+    if (pace) {
+      paceData.value = {
+        ...pace,
+        message: formatPaceMessage(pace)
+      }
+      activeBakeStore.updatePace(pace)
+    }
+  } else if (adjustment.type === 'extend') {
+    // Extend fermentation: shift target time
+    activeBakeStore.adjustTarget(adjustment.newCompletionTime)
+
+    const totalElapsedMinutes = hoursOnStep.value * 60 + minutesOnStep.value
+    const pace = calculatePace(
+      activeBakeStore.schedule,
+      selectedStepId.value,
+      totalElapsedMinutes,
+      activeBakeStore.bake.actualStartTime,
+      adjustment.newCompletionTime
+    )
+
+    if (pace) {
+      paceData.value = {
+        ...pace,
+        message: formatPaceMessage(pace)
+      }
+      activeBakeStore.updatePace(pace)
+    }
+  }
+
+  showAdjustments.value = false
 }
 
 function resetCalculation() {

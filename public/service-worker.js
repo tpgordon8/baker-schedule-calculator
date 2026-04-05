@@ -10,6 +10,29 @@ self.addEventListener('activate', event => {
   event.waitUntil(self.clients.claim())
 })
 
+// Handle push notifications from the server
+self.addEventListener('push', event => {
+  if (!event.data) {
+    console.log('Push notification received but no data')
+    return
+  }
+
+  const data = event.data.json()
+  const options = {
+    body: data.body || 'Baker Schedule Calendar notification',
+    icon: '/favicon.svg',
+    badge: '/favicon.svg',
+    tag: data.tag || 'baker-notification',
+    requireInteraction: data.requireInteraction || false,
+    vibrate: data.vibrate || [100],
+    sound: data.sound || undefined
+  }
+
+  event.waitUntil(
+    self.registration.showNotification(data.title || 'Baker Schedule', options)
+  )
+})
+
 // Handle notification clicks
 self.addEventListener('notificationclick', event => {
   console.log('Notification clicked:', event.notification.tag)

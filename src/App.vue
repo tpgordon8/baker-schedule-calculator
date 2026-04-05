@@ -20,6 +20,7 @@
 
     <footer class="border-t border-gray-300 px-4 py-4 text-center text-xs text-gray-600 mt-8">
       <p>Made for ADHD bakers who want to understand their schedule</p>
+      <p class="mt-2">Dedicated to my wife, Meaghan.</p>
     </footer>
   </div>
 </template>

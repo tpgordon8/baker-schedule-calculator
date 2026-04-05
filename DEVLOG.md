@@ -1,8 +1,9 @@
 # Development Log
 
 ## Project: Baker Schedule Calculator
-**Status:** MVP Phase 1 Complete  
+**Status:** Phase 2 Complete, Phase 3 In Progress  
 **Last Updated:** 2026-04-05
+**Version:** 0.2.0 (Resume Bake & Adjustments Complete)
 
 ---
 

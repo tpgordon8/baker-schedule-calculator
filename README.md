@@ -4,17 +4,26 @@ An ADHD-friendly sourdough baking schedule calculator. Plan your bake backward f
 
 ## Features
 
-### Current (MVP)
+### Phase 1 ✅ Complete
 - ✅ **Schedule Generation**: Enter target completion time → get complete timeline with all checkpoints
 - ✅ **Flexible Timing**: Account for temperature variations in bulk fermentation
 - ✅ **Proof Method Selection**: Choose room temp or cold proof strategy
 - ✅ **Step Tracking**: Mark steps complete and see actual vs planned time
 - ✅ **Adjustment Logic**: If running late, automatically recalculate remaining steps
 
-### In Development
-- Template saving and loading
-- Visual progress indicators
-- Cooking/baking timer notifications
+### Phase 2 ✅ Complete
+- ✅ **Resume Bake**: Check progress mid-bake at any time
+- ✅ **Pace Calculation**: See if you're ahead/behind/on-track for your target
+- ✅ **Fast-Track Option**: Reduce fermentation time to finish earlier
+- ✅ **Extend Option**: Add time to bulk or final fermentation  
+- ✅ **Auto-Save**: Active bakes persist across page refreshes
+- ✅ **Live Recalculation**: Schedule updates instantly on adjustments
+
+### Phase 3 🔄 In Development
+- Template management (edit, delete, clone)
+- Progress visualization (bars, indicators)
+- Step timers with countdowns
+- Bake history & statistics
 
 ## Quick Start
 
@@ -50,7 +59,9 @@ Sourdough timing is complex and temperature-dependent. Bakers need to know:
 2. **Customize Workflow**: Select bulk fermentation duration based on room temperature
 3. **Get Timeline**: Complete schedule with all steps and exact timestamps
 4. **Track Progress**: Mark steps complete, app shows countdown to next step
-5. **Auto-Adjust**: Fall behind? Mark step as late → app recalculates remaining steps and new completion time
+5. **Check Progress Anytime**: Mid-bake? Go to "Check Progress" and see if you're on pace
+6. **Adjust Strategy**: Choose fast-track (reduce time) OR extend (add time) based on needs
+7. **Auto-Save**: Everything saves automatically - resume anytime
 
 ## Workflow Steps (Sourdough)
 

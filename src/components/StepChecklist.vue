@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue'
+import { defineProps, defineEmits, computed } from 'vue'
 
 const props = defineProps({
   modelValue: {
@@ -55,8 +55,8 @@ function formatDuration(minutes) {
   return mins > 0 ? `${hours}h ${mins}m` : `${hours}h`
 }
 
-function completedNames() {
+const completedNames = computed(() => {
   const completedSteps = props.steps.filter(s => props.modelValue.includes(s.stepId))
   return completedSteps.map(s => s.stepName).join(', ')
-}
+})
 </script>

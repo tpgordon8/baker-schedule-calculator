@@ -403,54 +403,76 @@ function previousStep() {
 }
 
 function joinBake() {
-  if (!selectedTemplate.value || !actualStartDateTime.value || !targetDateTime.value) {
+  console.log('joinBake() called', {
+    selectedTemplate: selectedTemplate.value?.name,
+    actualStartDateTime: actualStartDateTime.value,
+    targetDateTime: targetDateTime.value,
+    currentStepId: currentStepId.value,
+    completedStepIds: completedStepIds.value
+  })
+
+  if (!selectedTemplate.value) {
+    console.error('joinBake: No template selected')
+    return
+  }
+  if (!actualStartDateTime.value) {
+    console.error('joinBake: No actual start date/time')
+    return
+  }
+  if (!targetDateTime.value) {
+    console.error('joinBake: No target date/time')
     return
   }
 
-  // Initialize bake with retroactive data
-  activeBakeStore.initializeBake(targetDateTime.value.toISOString(), selectedTemplate.value)
+  try {
+    // Initialize bake with retroactive data
+    activeBakeStore.initializeBake(targetDateTime.value.toISOString(), selectedTemplate.value)
 
-  // Mark as retroactive
-  activeBakeStore.bake.isRetroactive = true
-  activeBakeStore.bake.actualStartTime = actualStartDateTime.value.toISOString()
-  activeBakeStore.bake.completedStepIds = completedStepIds.value
-  activeBakeStore.bake.currentStepId = currentStepId.value
-  activeBakeStore.bake.elapsedOnCurrentStepMinutes = currentStepHours.value * 60 + currentStepMinutes.value
+    // Mark as retroactive
+    activeBakeStore.bake.isRetroactive = true
+    activeBakeStore.bake.actualStartTime = actualStartDateTime.value.toISOString()
+    activeBakeStore.bake.completedStepIds = completedStepIds.value
+    activeBakeStore.bake.currentStepId = currentStepId.value
+    activeBakeStore.bake.elapsedOnCurrentStepMinutes = currentStepHours.value * 60 + currentStepMinutes.value
 
-  // Generate schedule
-  const schedule = generateSchedule(
-    selectedTemplate.value,
-    targetDateTime.value.toISOString()
-  )
+    // Generate schedule
+    const schedule = generateSchedule(
+      selectedTemplate.value,
+      targetDateTime.value.toISOString()
+    )
 
-  // Mark completed steps
-  schedule.forEach(step => {
-    if (completedStepIds.value.includes(step.stepId)) {
-      step.status = 'completed'
-      step.actualTime = new Date().toISOString()
+    // Mark completed steps
+    schedule.forEach(step => {
+      if (completedStepIds.value.includes(step.stepId)) {
+        step.status = 'completed'
+        step.actualTime = new Date().toISOString()
+      }
+    })
+
+    // Update schedule
+    activeBakeStore.updateSchedule(schedule)
+
+    // Calculate retroactive pace
+    const paceData = calculatePace(
+      schedule,
+      currentStepId.value,
+      completedStepIds.value.reduce((sum, stepId) => {
+        const step = schedule.find(s => s.stepId === stepId)
+        return sum + (step?.duration || 0)
+      }, 0) + (currentStepHours.value * 60 + currentStepMinutes.value),
+      actualStartDateTime.value.toISOString(),
+      targetDateTime.value
+    )
+
+    if (paceData) {
+      activeBakeStore.updatePace(paceData)
     }
-  })
 
-  // Update schedule
-  activeBakeStore.updateSchedule(schedule)
-
-  // Calculate retroactive pace
-  const paceData = calculatePace(
-    schedule,
-    currentStepId.value,
-    completedStepIds.value.reduce((sum, stepId) => {
-      const step = schedule.find(s => s.stepId === stepId)
-      return sum + (step?.duration || 0)
-    }, 0) + (currentStepHours.value * 60 + currentStepMinutes.value),
-    actualStartDateTime.value.toISOString(),
-    targetDateTime.value
-  )
-
-  if (paceData) {
-    activeBakeStore.updatePace(paceData)
+    console.log('joinBake: Success, navigating to /tracker')
+    // Navigate to tracker
+    router.push('/tracker')
+  } catch (error) {
+    console.error('joinBake: Error occurred', error)
   }
-
-  // Navigate to tracker
-  router.push('/tracker')
 }
 </script>

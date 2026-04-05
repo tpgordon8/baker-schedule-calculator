@@ -37,7 +37,7 @@
     <div v-else class="space-y-2">
       <div v-for="bake in historyStore.completedBakes" :key="bake.id" class="card">
         <div class="flex justify-between items-start">
-          <div>
+          <div class="flex-1">
             <div class="font-bold">{{ bake.templateName }}</div>
             <div class="text-xs text-gray-600 mt-1">
               {{ formatDate(bake.completedAt) }}
@@ -48,14 +48,24 @@
               <strong>Actual:</strong> {{ formatTime(new Date(bake.actualCompletion)) }}
             </div>
           </div>
-          <div class="text-right">
-            <div class="text-lg font-bold" :class="getVarianceColor(bake.variance)">
-              {{ bake.variance > 0 ? '+' : '' }}{{ bake.variance }}m
+          <div class="text-right flex flex-col gap-2 items-end ml-4">
+            <div>
+              <div class="text-lg font-bold" :class="getVarianceColor(bake.variance)">
+                {{ bake.variance > 0 ? '+' : '' }}{{ bake.variance }}m
+              </div>
+              <div class="text-xs text-gray-600">{{ getVarianceLabel(bake.variance) }}</div>
+              <div class="text-xs text-gray-600 mt-2">
+                {{ bake.elapsedTime.hours }}h {{ bake.elapsedTime.minutes }}m
+              </div>
             </div>
-            <div class="text-xs text-gray-600">{{ getVarianceLabel(bake.variance) }}</div>
-            <div class="text-xs text-gray-600 mt-2">
-              {{ bake.elapsedTime.hours }}h {{ bake.elapsedTime.minutes }}m
-            </div>
+            <button
+              @click="deleteBake(bake.id)"
+              class="text-lg hover:text-red-700 p-1 rounded"
+              title="Delete this bake from history"
+              aria-label="Delete bake"
+            >
+              🗑️
+            </button>
           </div>
         </div>
       </div>
@@ -103,6 +113,12 @@ function getVarianceLabel(variance) {
 function clearHistory() {
   if (confirm('Clear all bake history? This cannot be undone.')) {
     historyStore.clearHistory()
+  }
+}
+
+function deleteBake(bakeId) {
+  if (confirm('Delete this bake from history?')) {
+    historyStore.deleteBake(bakeId)
   }
 }
 </script>

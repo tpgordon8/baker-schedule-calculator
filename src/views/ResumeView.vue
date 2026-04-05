@@ -58,7 +58,17 @@
 
       <!-- Pace Display -->
       <div v-if="paceData" class="card">
-        <div class="text-lg font-bold mb-2">{{ paceData.message }}</div>
+        <div class="flex justify-between items-start mb-2">
+          <div class="text-lg font-bold">{{ paceData.message }}</div>
+          <button
+            @click="openEditTargetModal"
+            class="text-lg hover:text-gray-700 p-1 rounded"
+            title="Edit target time"
+            aria-label="Edit target completion time"
+          >
+            ✏️
+          </button>
+        </div>
         <div class="text-sm text-gray-600 mb-3">
           <p><strong>Projected finish:</strong> {{ formatTime(paceData.projectedCompletion) }}</p>
           <p><strong>Original target:</strong> {{ formatTime(new Date(activeBakeStore.bake.originalTargetTime)) }}</p>
@@ -69,6 +79,43 @@
         </div>
         <div v-else-if="paceData.paceStatus === 'behind'" class="text-sm text-orange-700 mb-3">
           You're running late. You could fast-track remaining steps.
+        </div>
+      </div>
+
+      <!-- Edit Target Modal -->
+      <div v-if="showEditTargetModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+        <div class="bg-white border-4 border-gray-900 p-6 max-w-sm w-full">
+          <h3 class="text-lg font-bold mb-4">Edit Target Time</h3>
+          <div class="mb-4">
+            <label class="block text-sm font-bold mb-2">New Target Date</label>
+            <input
+              v-model="editTargetDate"
+              type="date"
+              class="input-field w-full"
+            />
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-bold mb-2">New Target Time</label>
+            <input
+              v-model="editTargetTime"
+              type="time"
+              class="input-field w-full"
+            />
+          </div>
+          <div class="flex gap-2">
+            <button
+              @click="saveEditTarget"
+              class="btn btn-primary flex-1"
+            >
+              Save
+            </button>
+            <button
+              @click="showEditTargetModal = false"
+              class="btn flex-1"
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       </div>
 
@@ -118,6 +165,9 @@ const hoursOnStep = ref(0)
 const minutesOnStep = ref(0)
 const paceData = ref(null)
 const showAdjustments = ref(false)
+const showEditTargetModal = ref(false)
+const editTargetDate = ref('')
+const editTargetTime = ref('')
 
 const availableSteps = computed(() => {
   return activeBakeStore.schedule
@@ -225,5 +275,40 @@ function resetCalculation() {
 
 function goBack() {
   router.push('/tracker')
+}
+
+function openEditTargetModal() {
+  const target = new Date(activeBakeStore.bake.targetCompletionTime)
+  editTargetDate.value = target.toISOString().split('T')[0]
+  editTargetTime.value = target.toTimeString().slice(0, 5)
+  showEditTargetModal.value = true
+}
+
+function saveEditTarget() {
+  const dateTime = new Date(`${editTargetDate.value}T${editTargetTime.value}`)
+  if (isNaN(dateTime.getTime())) {
+    alert('Invalid date/time')
+    return
+  }
+  activeBakeStore.editBake({ targetCompletionTime: dateTime })
+  showEditTargetModal.value = false
+  // Recalculate pace with new target
+  if (paceData.value) {
+    const totalElapsedMinutes = hoursOnStep.value * 60 + minutesOnStep.value
+    const pace = calculatePaceData(
+      activeBakeStore.schedule,
+      selectedStepId.value,
+      totalElapsedMinutes,
+      activeBakeStore.bake.actualStartTime,
+      dateTime
+    )
+    if (pace) {
+      paceData.value = {
+        ...pace,
+        message: formatPaceMessage(pace)
+      }
+      activeBakeStore.updatePace(pace)
+    }
+  }
 }
 </script>

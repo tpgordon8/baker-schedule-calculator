@@ -73,12 +73,17 @@ export const useBakeHistoryStore = defineStore('bakeHistory', () => {
     completedBakes.value = []
   }
 
+  function deleteBake(bakeId) {
+    completedBakes.value = completedBakes.value.filter(b => b.id !== bakeId)
+  }
+
   return {
     completedBakes,
     addCompletedBake,
     getCompletedBakes,
     getStatistics,
-    clearHistory
+    clearHistory,
+    deleteBake
   }
 }, {
   persist: true

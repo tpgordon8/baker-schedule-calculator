@@ -14,3 +14,14 @@ app.use(pinia)
 app.use(router)
 
 app.mount('#app')
+
+// Register service worker for push notifications and offline support
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+      console.log('Service Worker registered:', registration)
+    })
+    .catch(error => {
+      console.log('Service Worker registration failed:', error)
+    })
+}

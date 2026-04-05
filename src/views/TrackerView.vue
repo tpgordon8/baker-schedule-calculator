@@ -49,11 +49,72 @@
         <RouterLink to="/resume" class="btn flex-1">
           📊 Check Pace
         </RouterLink>
+        <button @click="toggleBakeMenu" class="btn">
+          ⚙️
+        </button>
         <button @click="endBake" class="btn flex-1">
           Finish Bake
         </button>
       </div>
+
+      <!-- Bake Settings Menu -->
+      <div v-if="showBakeMenu" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+        <div class="bg-white border-4 border-gray-900 p-6 max-w-sm w-full">
+          <h3 class="text-lg font-bold mb-4">Bake Options</h3>
+          <div class="space-y-2">
+            <button @click="openEditModal" class="btn w-full text-left">
+              ✏️ Edit Target Time
+            </button>
+            <button @click="togglePause" class="btn w-full text-left">
+              {{ activeBakeStore.bake.isPaused ? '▶️ Resume' : '⏸️ Pause' }}
+            </button>
+            <button @click="deleteBake" class="btn w-full text-left text-red-700">
+              🗑️ Delete Bake
+            </button>
+            <button @click="toggleBakeMenu" class="btn w-full">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Edit Target Time Modal -->
+      <div v-if="showEditModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+        <div class="bg-white border-4 border-gray-900 p-6 max-w-sm w-full">
+          <h3 class="text-lg font-bold mb-4">Edit Target Time</h3>
+          <div class="mb-4">
+            <label class="block text-sm font-bold mb-2">New Target Date</label>
+            <input
+              v-model="editTargetDate"
+              type="date"
+              class="input-field w-full"
+            />
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-bold mb-2">New Target Time</label>
+            <input
+              v-model="editTargetTime"
+              type="time"
+              class="input-field w-full"
+            />
+          </div>
+          <div class="flex gap-2">
+            <button @click="saveEditTarget" class="btn btn-primary flex-1">
+              Save
+            </button>
+            <button @click="showEditModal = false" class="btn flex-1">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Notification Settings -->
+    <NotificationSettings
+      :is-showing="showNotificationSettings"
+      @close="showNotificationSettings = false"
+    />
 
     <AdjustmentModal
       v-if="showAdjustment"
@@ -65,22 +126,47 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import { useRouter, RouterLink } from 'vue-router'
 import { useActiveBakeStore } from '../stores/activeBake'
+import { useNotificationsStore } from '../stores/notifications'
 import { useScheduleCalculator } from '../composables/useScheduleCalculator'
+import { useNotifications } from '../composables/useNotifications'
 import StepCard from '../components/StepCard.vue'
 import AdjustmentModal from '../components/AdjustmentModal.vue'
 import ProgressBar from '../components/ProgressBar.vue'
 import StepTimer from '../components/StepTimer.vue'
+import NotificationSettings from '../components/NotificationSettings.vue'
 
 const router = useRouter()
 const activeBakeStore = useActiveBakeStore()
+const notificationsStore = useNotificationsStore()
 const { formatTime, formatDate, adjustScheduleForDelay } = useScheduleCalculator()
+const { requestPermission, scheduleAllNotifications } = useNotifications()
 
 const showAdjustment = ref(false)
 const adjustingStepId = ref(null)
 const adjustingStepIndex = ref(null)
+const showNotificationSettings = ref(false)
+const showBakeMenu = ref(false)
+const showEditModal = ref(false)
+const editTargetDate = ref('')
+const editTargetTime = ref('')
+
+// Request notification permission on mount
+onMounted(async () => {
+  const targetDate = new Date(activeBakeStore.bake.targetCompletionTime)
+  editTargetDate.value = targetDate.toISOString().split('T')[0]
+  editTargetTime.value = targetDate.toTimeString().slice(0, 5)
+
+  // Request notification permission
+  if (!notificationsStore.permissionRequested) {
+    await requestPermission()
+    if (notificationsStore.permissionGranted) {
+      scheduleAllNotifications(schedule.value)
+    }
+  }
+})
 
 const schedule = computed(() => activeBakeStore.schedule)
 
@@ -160,6 +246,41 @@ function handleAdjustment(adjustment) {
 
 function endBake() {
   if (confirm('End this bake session? You can view the history on the home page.')) {
+    activeBakeStore.clearBake()
+    router.push('/')
+  }
+}
+
+function toggleBakeMenu() {
+  showBakeMenu.value = !showBakeMenu.value
+}
+
+function openEditModal() {
+  showBakeMenu.value = false
+  showEditModal.value = true
+}
+
+function saveEditTarget() {
+  const newDate = new Date(`${editTargetDate.value}T${editTargetTime.value}`)
+  activeBakeStore.editBake({
+    targetCompletionTime: newDate.toISOString()
+  })
+  showEditModal.value = false
+}
+
+function togglePause() {
+  showBakeMenu.value = false
+  if (activeBakeStore.bake.isPaused) {
+    activeBakeStore.resumeBake()
+    scheduleAllNotifications(schedule.value, activeBakeStore.bake.actualStartTime)
+  } else {
+    activeBakeStore.pauseBake()
+  }
+}
+
+function deleteBake() {
+  if (confirm('Delete this bake? This cannot be undone.')) {
+    showBakeMenu.value = false
     activeBakeStore.clearBake()
     router.push('/')
   }

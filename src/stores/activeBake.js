@@ -21,7 +21,9 @@ export const useActiveBakeStore = defineStore('activeBake', () => {
       schedule: [],
       adjustments: [],
       pace: null,
-      resumedAt: null
+      resumedAt: null,
+      isPaused: false,
+      editedAt: null
     }
   }
 
@@ -75,6 +77,25 @@ export const useActiveBakeStore = defineStore('activeBake', () => {
     }
   }
 
+  function pauseBake() {
+    if (bake.value) {
+      bake.value.isPaused = true
+    }
+  }
+
+  function resumeBake() {
+    if (bake.value) {
+      bake.value.isPaused = false
+    }
+  }
+
+  function editBake(updates) {
+    if (bake.value) {
+      Object.assign(bake.value, updates)
+      bake.value.editedAt = new Date().toISOString()
+    }
+  }
+
   return {
     bake,
     schedule,
@@ -87,7 +108,10 @@ export const useActiveBakeStore = defineStore('activeBake', () => {
     clearBake,
     resumeFromStep,
     updatePace,
-    adjustTarget
+    adjustTarget,
+    pauseBake,
+    resumeBake,
+    editBake
   }
 }, {
   persist: true

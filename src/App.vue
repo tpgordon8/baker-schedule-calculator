@@ -1,12 +1,17 @@
 <template>
   <div id="app" class="min-h-screen bg-white text-gray-900 flex flex-col">
     <header class="border-b border-gray-300 px-4 py-6 sm:py-8">
-      <h1 class="text-2xl sm:text-3xl font-bold">
-        <RouterLink to="/" class="hover:text-gray-700 focus:outline-2 focus:outline-offset-2 focus:outline-gray-900 rounded px-2">
-          Baker Schedule Calculator
-        </RouterLink>
-      </h1>
-      <p class="text-gray-600 text-sm mt-2">Plan your bake backward from your target time</p>
+      <div class="flex justify-between items-start">
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-bold">
+            <RouterLink to="/" class="hover:text-gray-700 focus:outline-2 focus:outline-offset-2 focus:outline-gray-900 rounded px-2">
+              Baker Schedule Calculator
+            </RouterLink>
+          </h1>
+          <p class="text-gray-600 text-sm mt-2">Plan your bake backward from your target time</p>
+        </div>
+        <span class="text-xs text-gray-500 mt-1">v{{ APP_VERSION }}</span>
+      </div>
     </header>
 
     <main class="flex-1 max-w-2xl mx-auto w-full px-4 py-6 sm:py-8">
@@ -21,6 +26,7 @@
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import { APP_VERSION } from '@/utils/version'
 </script>
 
 <style>

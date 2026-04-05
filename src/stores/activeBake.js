@@ -8,14 +8,20 @@ export const useActiveBakeStore = defineStore('activeBake', () => {
 
   const isActive = computed(() => bake.value !== null)
 
+  const pace = computed(() => bake.value?.pace || null)
+
   function initializeBake(targetTime, template) {
     bake.value = {
       id: Date.now().toString(),
       templateId: template.id,
       targetCompletionTime: targetTime,
+      originalTargetTime: targetTime,
+      actualStartTime: new Date().toISOString(),
       createdAt: new Date().toISOString(),
       schedule: [],
-      adjustments: []
+      adjustments: [],
+      pace: null,
+      resumedAt: null
     }
   }
 
@@ -48,14 +54,39 @@ export const useActiveBakeStore = defineStore('activeBake', () => {
     bake.value = null
   }
 
+  function resumeFromStep(currentStepId, elapsedMinutes) {
+    if (!bake.value) return
+    bake.value.resumedAt = {
+      timestamp: new Date().toISOString(),
+      currentStepId,
+      elapsedMinutes
+    }
+  }
+
+  function updatePace(paceData) {
+    if (bake.value) {
+      bake.value.pace = paceData
+    }
+  }
+
+  function adjustTarget(newTargetTime) {
+    if (bake.value) {
+      bake.value.targetCompletionTime = newTargetTime
+    }
+  }
+
   return {
     bake,
     schedule,
     isActive,
+    pace,
     initializeBake,
     updateSchedule,
     markStepComplete,
     addAdjustment,
-    clearBake
+    clearBake,
+    resumeFromStep,
+    updatePace,
+    adjustTarget
   }
 })

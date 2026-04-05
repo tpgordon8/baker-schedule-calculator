@@ -1,6 +1,21 @@
 <template>
   <div>
-    <h2 class="text-2xl font-bold mb-6">Start a New Bake</h2>
+    <!-- Active Bake Banner -->
+    <div v-if="activeBakeStore.isActive" class="card border-l-4 border-gray-900 mb-6">
+      <div class="text-sm text-gray-600">Active Bake</div>
+      <div class="font-bold">Started: {{ formatTime(activeBakeStore.bake.actualStartTime) }}</div>
+      <div class="text-xs text-gray-600">Elapsed: {{ formatElapsed(activeBakeStore.bake.actualStartTime) }}</div>
+      <div class="flex gap-2 mt-3">
+        <RouterLink to="/resume" class="btn btn-primary flex-1">
+          Check Progress
+        </RouterLink>
+        <button @click="startNewBake" class="btn flex-1">
+          Start New
+        </button>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mb-6">{{ activeBakeStore.isActive ? 'Or start another bake' : 'Start a New Bake' }}</h2>
 
     <div class="mb-8">
       <h3 class="text-lg font-bold mb-4">Select a Template</h3>
@@ -46,14 +61,15 @@
 
 <script setup>
 import { ref, watch } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, RouterLink } from 'vue-router'
 import { useTemplatesStore } from '../stores/templates'
 import { useActiveBakeStore } from '../stores/activeBake'
-import { RouterLink } from 'vue-router'
+import { useScheduleCalculator } from '../composables/useScheduleCalculator'
 
 const router = useRouter()
 const templatesStore = useTemplatesStore()
 const activeBakeStore = useActiveBakeStore()
+const { formatTime } = useScheduleCalculator()
 
 const selectedTemplate = ref(null)
 
@@ -61,6 +77,25 @@ function selectTemplate(template) {
   selectedTemplate.value = template
   // Store the selected template for use in calculator
   localStorage.setItem('selectedTemplate', JSON.stringify(template))
+}
+
+function formatElapsed(startTime) {
+  const start = new Date(startTime)
+  const now = new Date()
+  const diffMs = now - start
+  const hours = Math.floor(diffMs / 3600000)
+  const minutes = Math.round((diffMs % 3600000) / 60000)
+
+  if (hours === 0) return `${minutes}m`
+  if (minutes === 0) return `${hours}h`
+  return `${hours}h ${minutes}m`
+}
+
+function startNewBake() {
+  if (confirm('Start a new bake? Your current bake progress will be saved.')) {
+    selectedTemplate.value = null
+    localStorage.removeItem('selectedTemplate')
+  }
 }
 
 watch(selectedTemplate, (template) => {

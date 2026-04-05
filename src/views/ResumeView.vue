@@ -18,7 +18,10 @@
       <!-- Step Selector -->
       <div class="card">
         <label class="block text-sm font-bold mb-3">Which step are you on right now?</label>
-        <select v-model="selectedStepId" class="input-field w-full mb-3">
+        <div v-if="availableSteps.length === 0" class="p-3 bg-orange-50 text-orange-700 rounded text-sm mb-3">
+          No steps available. Make sure you have a schedule generated.
+        </div>
+        <select v-else v-model="selectedStepId" class="input-field w-full mb-3">
           <option value="">Select a step...</option>
           <option v-for="step in availableSteps" :key="step.stepId" :value="step.stepId">
             {{ step.stepName }}
@@ -170,21 +173,12 @@ const editTargetDate = ref('')
 const editTargetTime = ref('')
 
 const availableSteps = computed(() => {
-  if (activeBakeStore.schedule && activeBakeStore.schedule.length > 0) {
-    return activeBakeStore.schedule
-  }
-  // Fallback: if no schedule, generate steps from template
-  if (!activeBakeStore.bake) return []
-  const template = activeBakeStore.bake.template
-  if (!template || !template.workflow) return []
-
-  return Object.entries(template.workflow)
-    .filter(([_, step]) => !step.withinBulk)
-    .map(([stepId, stepData]) => ({
-      stepId,
-      stepName: stepData.name || stepId,
-      duration: stepData.minutes
-    }))
+  const steps = activeBakeStore.schedule || []
+  return steps.map(step => ({
+    stepId: step.stepId,
+    stepName: step.stepName,
+    duration: step.duration
+  }))
 })
 
 const remainingSteps = computed(() => {

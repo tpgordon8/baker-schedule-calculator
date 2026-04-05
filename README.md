@@ -1,6 +1,6 @@
 # Baker Schedule Calculator
 
-An ADHD-friendly sourdough baking schedule calculator. Plan your bake backward from your target completion time and automatically adjust if you fall behind.
+**Version 0.3.0** - An ADHD-friendly sourdough baking schedule calculator with mid-process resumption, automatic adjustment, progress tracking, and bake history. Plan your bake backward from your target completion time and automatically adjust if you fall behind or get ahead of schedule.
 
 ## Features
 
@@ -19,11 +19,12 @@ An ADHD-friendly sourdough baking schedule calculator. Plan your bake backward f
 - ✅ **Auto-Save**: Active bakes persist across page refreshes
 - ✅ **Live Recalculation**: Schedule updates instantly on adjustments
 
-### Phase 3 🔄 In Development
-- Template management (edit, delete, clone)
-- Progress visualization (bars, indicators)
-- Step timers with countdowns
-- Bake history & statistics
+### Phase 3 ✅ Complete
+- ✅ **Template Management**: Clone, delete, export/import templates
+- ✅ **Progress Visualization**: Real-time progress bars with percentage
+- ✅ **Step Timers**: Countdown timers for each step with overtime detection
+- ✅ **Bake History**: Track all past bakes with statistics
+- ✅ **Analytics**: Success rate, average variance, trends
 
 ## Quick Start
 
@@ -137,13 +138,25 @@ src/
 ├── views/
 │   ├── HomeView.vue                 # Template selection
 │   ├── CalculatorView.vue           # Schedule generation
-│   └── TrackerView.vue              # Step tracking
+│   ├── TrackerView.vue              # Step tracking
+│   ├── ResumeView.vue               # Check progress mid-bake
+│   ├── HistoryView.vue              # Bake history & stats
+│   └── TemplatesView.vue            # Template management
 ├── components/
 │   ├── ScheduleTimeline.vue         # Visual timeline
 │   ├── StepCard.vue                 # Individual step display
-│   └── AdjustmentModal.vue          # Adjustment UI
+│   ├── AdjustmentModal.vue          # Adjustment UI
+│   ├── AdjustmentOptions.vue        # Fast-track/extend options
+│   ├── ProgressBar.vue              # Progress visualization
+│   ├── StepTimer.vue                # Countdown timer
+│   └── TemplateManager.vue          # Clone/delete templates
+├── stores/
+│   ├── templates.js                 # Bake templates (with persistence)
+│   ├── activeBake.js                # Current bake session
+│   └── bakeHistory.js               # Completed bake history
 ├── composables/
-│   └── useScheduleCalculator.js     # Core calculation logic
+│   ├── useScheduleCalculator.js     # Core calculation logic
+│   └── usePaceCalculation.js        # Pace calculation
 └── assets/
     └── main.css                     # Global styles + Tailwind
 ```

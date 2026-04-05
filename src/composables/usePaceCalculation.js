@@ -1,4 +1,3 @@
-import { computed } from 'vue'
 
 export function usePaceCalculation() {
   /**

@@ -1,4 +1,3 @@
-import { computed } from 'vue'
 import { subMinutes, format } from 'date-fns'
 
 export function useScheduleCalculator() {

@@ -253,7 +253,7 @@ const router = useRouter()
 const templatesStore = useTemplatesStore()
 const activeBakeStore = useActiveBakeStore()
 const { generateSchedule, formatTime, formatDate } = useScheduleCalculator()
-const { calculatePace, formatPaceMessage } = usePaceCalculation()
+const { calculatePace } = usePaceCalculation()
 
 const currentStep = ref(1)
 const selectedTemplate = ref(null)

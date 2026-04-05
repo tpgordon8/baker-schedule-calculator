@@ -111,7 +111,7 @@ import AdjustmentOptions from '../components/AdjustmentOptions.vue'
 const router = useRouter()
 const activeBakeStore = useActiveBakeStore()
 const { formatTime, formatDate } = useScheduleCalculator()
-const { calculatePace, formatPaceMessage } = usePaceCalculation()
+const { calculatePace: calculatePaceData, formatPaceMessage } = usePaceCalculation()
 
 const selectedStepId = ref('')
 const hoursOnStep = ref(0)
@@ -141,14 +141,14 @@ function formatElapsed(startTime) {
   return `${hours}h ${minutes}m`
 }
 
-function calculatePaceStatus() {
+function calculatePace() {
   if (!selectedStepId.value || !activeBakeStore.schedule.length) {
     alert('Please select a step')
     return
   }
 
   const totalElapsedMinutes = hoursOnStep.value * 60 + minutesOnStep.value
-  const pace = calculatePace(
+  const pace = calculatePaceData(
     activeBakeStore.schedule,
     selectedStepId.value,
     totalElapsedMinutes,
@@ -176,7 +176,7 @@ function handleAdjustment(adjustment) {
 
     // Recalculate pace with new target
     const totalElapsedMinutes = hoursOnStep.value * 60 + minutesOnStep.value
-    const pace = calculatePace(
+    const pace = calculatePaceData(
       activeBakeStore.schedule,
       selectedStepId.value,
       totalElapsedMinutes,
@@ -196,7 +196,7 @@ function handleAdjustment(adjustment) {
     activeBakeStore.adjustTarget(adjustment.newCompletionTime)
 
     const totalElapsedMinutes = hoursOnStep.value * 60 + minutesOnStep.value
-    const pace = calculatePace(
+    const pace = calculatePaceData(
       activeBakeStore.schedule,
       selectedStepId.value,
       totalElapsedMinutes,

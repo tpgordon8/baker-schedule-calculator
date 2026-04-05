@@ -33,7 +33,7 @@
 import { defineProps } from 'vue'
 import { useScheduleCalculator } from '../composables/useScheduleCalculator'
 
-defineProps({
+const props = defineProps({
   schedule: Array,
   targetTime: Date
 })
@@ -41,7 +41,7 @@ defineProps({
 const { formatTime, formatDate } = useScheduleCalculator()
 
 function getDurationUntilNext(currentStep, nextStep) {
-  const diff = nextStep.plannedTime - currentStep.plannedTime
+  const diff = new Date(nextStep.plannedTime) - new Date(currentStep.plannedTime)
   const hours = Math.floor(diff / 3600000)
   const minutes = Math.round((diff % 3600000) / 60000)
 
@@ -55,15 +55,10 @@ function getTotalDuration() {
 
   const first = props.schedule[0]
   const last = props.schedule[props.schedule.length - 1]
-  const diff = last.plannedTime - first.plannedTime + (last.duration * 60000)
+  const diff = new Date(last.plannedTime) - new Date(first.plannedTime) + (last.duration * 60000)
 
   const hours = Math.floor(diff / 3600000)
   const minutes = Math.round((diff % 3600000) / 60000)
-
-  const props = defineProps({
-    schedule: Array,
-    targetTime: Date
-  })
 
   if (hours === 0) return `${minutes}m`
   if (minutes === 0) return `${hours}h`

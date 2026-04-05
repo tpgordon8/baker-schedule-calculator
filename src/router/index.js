@@ -5,6 +5,7 @@ import TrackerView from '../views/TrackerView.vue'
 import ResumeView from '../views/ResumeView.vue'
 import HistoryView from '../views/HistoryView.vue'
 import TemplatesView from '../views/TemplatesView.vue'
+import JoinExistingBakeView from '../views/JoinExistingBakeView.vue'
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: '/templates',
     name: 'Templates',
     component: TemplatesView
+  },
+  {
+    path: '/join',
+    name: 'JoinExisting',
+    component: JoinExistingBakeView
   }
 ]
 

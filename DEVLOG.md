@@ -443,6 +443,82 @@ commit: Initial project setup + Phase 1 core calculator
 
 ---
 
+---
+
+# PHASE 4: RETROACTIVE BAKE ENTRY (Join Existing Bake Mid-Process) ✅ COMPLETE
+
+## Completed Features (2026-04-05)
+
+### Phase 4A: Join Existing Bake Multi-Step Form
+- ✅ JoinExistingBakeView.vue with 6-step multi-step form
+  - Step 1: Template selection
+  - Step 2: Actual start time picker (past dates allowed)
+  - Step 3: Target completion time picker
+  - Step 4: Completed steps checklistStep 5: Current step selection
+  - Step 6: Elapsed time on current step
+  - Step 7: Review and confirm screen
+- ✅ StepChecklist.vue component for selecting completed steps
+- ✅ Validation for past start times, future target times
+- ✅ Progress bar indicator showing current step
+- ✅ Error messages for invalid inputs
+- ✅ Time calculations and formatting throughout form
+
+### Phase 4B: Retroactive Pace Calculation
+- ✅ Reused existing calculatePace() from usePaceCalculation.js
+- ✅ Calculates actual elapsed time from past start to now
+- ✅ Compares actual vs planned elapsed time
+- ✅ Determines pace status (ahead/behind/on-track)
+- ✅ Pace data persisted to activeBake store
+
+### Phase 4C: Integration & Navigation
+- ✅ Added /join route to router/index.js
+- ✅ Added "Join Existing Bake" button (🔄) to HomeView
+- ✅ Easy navigation from home page
+- ✅ Handles cancel/back navigation
+- ✅ Seamless transition to tracker view
+
+## User Experience Improvements
+1. **Retroactive Entry** - Users who start without the app can catch it up with reality
+2. **Step-by-Step Guidance** - Multi-step form guides users through entry process
+3. **Validation Feedback** - Clear error messages prevent invalid data entry
+4. **Progress Indication** - Progress bar shows where user is in the form
+5. **Confirmation Screen** - Review all data before committing to bake session
+
+## Real-World Scenario Support
+
+**Scenario: Started baking without the app**
+1. User started sourdough at 7am without opening the app
+2. It's now 2pm and they want to track pace for 8pm finish
+3. Opens app, clicks "Join Existing Bake"
+4. Enters: template, 7am start time, 8pm target
+5. Checks completed steps: Feed Starter, Autolyse, Mix, 1.5h into Bulk Ferm
+6. Confirms and enters tracker with pace data
+7. App shows: "Behind by 30m, projecting 8:30pm finish"
+8. Can now use fast-track or extend options like normal bake
+
+## Git Commits for Phase 4
+- Phase 4A-C: Multiple commits for step-by-step implementation
+
+## Navigation & Routes
+- ✅ `/join` - Retroactive bake entry form
+- ✅ Home page quick link button
+- ✅ Cancel button returns to home
+- ✅ Success flow goes to tracker
+
+## Data Model Enhancement
+```javascript
+activeBake: {
+  // ... existing fields ...
+  isRetroactive: true,              // Flag for retroactive entry
+  actualStartTime: '2026-04-05T07:00:00Z',  // Real start time
+  completedStepIds: ['feedStarter', 'autolyse', 'mix'],
+  currentStepId: 'bulkFermentation',
+  elapsedOnCurrentStepMinutes: 120, // Time already spent on current step
+}
+```
+
+---
+
 **End of Development Log**
 
 Last updated: 2026-04-05 by Claude AI

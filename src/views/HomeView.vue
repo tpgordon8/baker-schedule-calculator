@@ -30,6 +30,13 @@
 
     <h2 class="text-2xl font-bold mb-6">{{ activeBakeStore.isActive ? 'Or start another bake' : 'Start a New Bake' }}</h2>
 
+    <!-- Quick action buttons -->
+    <div class="flex gap-2 mb-6">
+      <RouterLink to="/join" class="btn btn-primary flex-1">
+        🔄 Join Existing Bake
+      </RouterLink>
+    </div>
+
     <div class="mb-8">
       <h3 class="text-lg font-bold mb-4">Select a Template</h3>
       <div v-if="templatesStore.templates.length" class="space-y-2">

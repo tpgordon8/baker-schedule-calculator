@@ -87,11 +87,10 @@
 
 <script setup>
 import { ref } from 'vue'
-import { useTemplatesStore } from '../composables/useScheduleCalculator'
 import { useScheduleCalculator } from '../composables/useScheduleCalculator'
-import { useTemplatesStore as getTemplatesStore } from '../stores/templates'
+import { useTemplatesStore } from '../stores/templates'
 
-const templatesStore = getTemplatesStore()
+const templatesStore = useTemplatesStore()
 const { formatDate } = useScheduleCalculator()
 
 const cloneModal = ref({

@@ -26,6 +26,13 @@
 - ✅ **Bake History**: Track all past bakes with statistics
 - ✅ **Analytics**: Success rate, average variance, trends
 
+### Phase 4 ✅ Complete
+- ✅ **Join Existing Bake**: Multi-step form to catch app up with past progress
+- ✅ **Retroactive Entry**: Enter past start time and completed steps
+- ✅ **Pace Calculation**: Calculate where you are and if you're on pace
+- ✅ **Easy Navigation**: Quick "Join Existing Bake" button on home page
+- ✅ **Form Validation**: Prevent invalid entries with helpful error messages
+
 ## Quick Start
 
 ### Development
@@ -63,6 +70,7 @@ Sourdough timing is complex and temperature-dependent. Bakers need to know:
 5. **Check Progress Anytime**: Mid-bake? Go to "Check Progress" and see if you're on pace
 6. **Adjust Strategy**: Choose fast-track (reduce time) OR extend (add time) based on needs
 7. **Auto-Save**: Everything saves automatically - resume anytime
+8. **Join Existing Bake**: Started without the app? Tell it where you are and it catches up automatically
 
 ## Workflow Steps (Sourdough)
 

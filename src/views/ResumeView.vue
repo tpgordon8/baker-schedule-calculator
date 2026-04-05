@@ -184,7 +184,7 @@ const availableSteps = computed(() => {
   if (!template?.workflow) return []
 
   return Object.entries(template.workflow)
-    .filter(([_, step]) => !step.withinBulk)
+    .filter(([, step]) => !step.withinBulk)
     .map(([stepId, stepData]) => ({
       stepId,
       stepName: stepData.name || stepId,

@@ -179,8 +179,21 @@ const availableSteps = computed(() => {
     }))
   }
 
-  // Fallback: generate steps from template if schedule is empty
-  const template = activeBakeStore.bake?.template
+  // Fallback: generate steps from stored template
+  let template = activeBakeStore.bake?.template
+
+  // If template missing (old bake), try to get from localStorage
+  if (!template) {
+    const stored = localStorage.getItem('selectedTemplate')
+    if (stored) {
+      try {
+        template = JSON.parse(stored)
+      } catch {
+        template = null
+      }
+    }
+  }
+
   if (!template?.workflow) return []
 
   return Object.entries(template.workflow)

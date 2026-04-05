@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import CalculatorView from '../views/CalculatorView.vue'
 import TrackerView from '../views/TrackerView.vue'
 import ResumeView from '../views/ResumeView.vue'
+import HistoryView from '../views/HistoryView.vue'
+import TemplatesView from '../views/TemplatesView.vue'
 
 const routes = [
   {
@@ -24,6 +26,16 @@ const routes = [
     path: '/resume',
     name: 'Resume',
     component: ResumeView
+  },
+  {
+    path: '/history',
+    name: 'History',
+    component: HistoryView
+  },
+  {
+    path: '/templates',
+    name: 'Templates',
+    component: TemplatesView
   }
 ]
 

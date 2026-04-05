@@ -46,11 +46,51 @@ export const useTemplatesStore = defineStore('templates', () => {
   }
 
   function deleteTemplate(id) {
+    // Don't delete default template
+    if (id === 'default-sourdough') return false
     templates.value = templates.value.filter(t => t.id !== id)
+    return true
   }
 
   function getTemplate(id) {
     return templates.value.find(t => t.id === id)
+  }
+
+  function cloneTemplate(id, newName) {
+    const original = getTemplate(id)
+    if (!original) return null
+
+    const cloned = {
+      ...JSON.parse(JSON.stringify(original)),
+      id: Date.now().toString(),
+      name: newName || `${original.name} (Copy)`,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    }
+    templates.value.push(cloned)
+    return cloned
+  }
+
+  function exportTemplate(id) {
+    const template = getTemplate(id)
+    if (!template) return null
+    return JSON.stringify(template, null, 2)
+  }
+
+  function importTemplate(jsonString) {
+    try {
+      const imported = JSON.parse(jsonString)
+      const newTemplate = {
+        ...imported,
+        id: Date.now().toString(),
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+      }
+      templates.value.push(newTemplate)
+      return newTemplate
+    } catch (e) {
+      return null
+    }
   }
 
   return {
@@ -58,7 +98,10 @@ export const useTemplatesStore = defineStore('templates', () => {
     addTemplate,
     updateTemplate,
     deleteTemplate,
-    getTemplate
+    getTemplate,
+    cloneTemplate,
+    exportTemplate,
+    importTemplate
   }
 }, {
   persist: true

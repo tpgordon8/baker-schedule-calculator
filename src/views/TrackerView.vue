@@ -16,7 +16,22 @@
         </div>
       </div>
 
-      <h3 class="text-lg font-bold mb-4">Steps</h3>
+      <!-- Progress Bar -->
+      <ProgressBar
+        :completed-count="completedStepsCount"
+        :total-count="schedule.length"
+      />
+
+      <!-- Step Timer (for current step) -->
+      <StepTimer
+        v-if="currentStep"
+        :current-step="currentStep"
+        :step-start-time="stepStartTime"
+        :planned-duration="currentStep.duration"
+        class="mt-4"
+      />
+
+      <h3 class="text-lg font-bold mb-4 mt-6">Steps</h3>
 
       <div class="space-y-3">
         <StepCard
@@ -56,6 +71,8 @@ import { useActiveBakeStore } from '../stores/activeBake'
 import { useScheduleCalculator } from '../composables/useScheduleCalculator'
 import StepCard from '../components/StepCard.vue'
 import AdjustmentModal from '../components/AdjustmentModal.vue'
+import ProgressBar from '../components/ProgressBar.vue'
+import StepTimer from '../components/StepTimer.vue'
 
 const router = useRouter()
 const activeBakeStore = useActiveBakeStore()
@@ -70,6 +87,28 @@ const schedule = computed(() => activeBakeStore.schedule)
 const adjustingStep = computed(() => {
   if (!adjustingStepId.value) return null
   return schedule.value.find(s => s.stepId === adjustingStepId.value)
+})
+
+const completedStepsCount = computed(() => {
+  return schedule.value.filter(s => s.status === 'completed').length
+})
+
+const currentStep = computed(() => {
+  return schedule.value.find(s => s.status === 'pending')
+})
+
+const stepStartTime = computed(() => {
+  if (!currentStep.value) return new Date()
+  // Find the step before current to calculate when this step started
+  const currentIndex = schedule.value.findIndex(s => s.stepId === currentStep.value.stepId)
+  if (currentIndex === 0) return new Date(activeBakeStore.bake.actualStartTime)
+  // Sum durations of all previous steps from start time
+  let totalMinutes = 0
+  for (let i = 0; i < currentIndex; i++) {
+    totalMinutes += schedule.value[i].duration
+  }
+  const startMs = new Date(activeBakeStore.bake.actualStartTime).getTime()
+  return new Date(startMs + totalMinutes * 60000)
 })
 
 function markStepComplete(stepId) {

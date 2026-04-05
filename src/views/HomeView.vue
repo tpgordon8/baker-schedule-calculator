@@ -18,6 +18,16 @@
       </button>
     </div>
 
+    <!-- Navigation Links -->
+    <div class="flex gap-2 mb-6">
+      <RouterLink to="/templates" class="btn flex-1 text-sm">
+        📋 Templates
+      </RouterLink>
+      <RouterLink to="/history" class="btn flex-1 text-sm">
+        📊 History
+      </RouterLink>
+    </div>
+
     <h2 class="text-2xl font-bold mb-6">{{ activeBakeStore.isActive ? 'Or start another bake' : 'Start a New Bake' }}</h2>
 
     <div class="mb-8">

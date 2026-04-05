@@ -14,6 +14,7 @@ export const useActiveBakeStore = defineStore('activeBake', () => {
     bake.value = {
       id: Date.now().toString(),
       templateId: template.id,
+      template: template,
       targetCompletionTime: targetTime,
       originalTargetTime: targetTime,
       actualStartTime: new Date().toISOString(),

@@ -8,77 +8,107 @@
 
     <div v-else>
       <!-- Started Time Banner -->
-      <div class="card">
-        <div class="text-sm text-gray-600">Started</div>
-        <div class="text-lg font-bold">{{ formatTime(activeBakeStore.bake.actualStartTime) }}</div>
-        <div class="text-xs text-gray-600">{{ formatDate(activeBakeStore.bake.actualStartTime) }}</div>
-        <div class="text-sm text-gray-600 mt-2">Elapsed: {{ formatElapsed(activeBakeStore.bake.actualStartTime) }}</div>
+      <div class="card bg-gray-50">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <div class="text-xs font-medium text-gray-600 uppercase tracking-wide mb-1">Started</div>
+            <div class="text-2xl font-bold text-gray-900">{{ formatTime(activeBakeStore.bake.actualStartTime) }}</div>
+            <div class="text-xs text-gray-500 mt-1">{{ formatDate(activeBakeStore.bake.actualStartTime) }}</div>
+          </div>
+          <div>
+            <div class="text-xs font-medium text-gray-600 uppercase tracking-wide mb-1">Elapsed Time</div>
+            <div class="text-2xl font-bold text-gray-900">{{ formatElapsed(activeBakeStore.bake.actualStartTime) }}</div>
+            <div class="text-xs text-gray-500 mt-1">Since start</div>
+          </div>
+        </div>
       </div>
 
       <!-- Step Selector -->
       <div class="card">
-        <label class="block text-sm font-bold mb-3">Which step are you on right now?</label>
-        <select v-model="selectedStepId" class="input-field w-full mb-3">
-          <option value="">Select a step...</option>
-          <option v-for="step in availableSteps" :key="step.stepId" :value="step.stepId">
-            {{ step.stepName }}
-          </option>
-        </select>
+        <div class="mb-4">
+          <label class="block text-sm font-bold mb-2">Which step are you on right now?</label>
+          <select v-model="selectedStepId" class="input-field w-full">
+            <option value="">Select a step...</option>
+            <option v-for="step in availableSteps" :key="step.stepId" :value="step.stepId">
+              {{ step.stepName }}
+            </option>
+          </select>
+          <p v-if="selectedStepId && availableSteps.find(s => s.stepId === selectedStepId)" class="text-xs text-gray-500 mt-2">
+            Expected duration: {{ availableSteps.find(s => s.stepId === selectedStepId)?.duration }} min
+          </p>
+        </div>
 
-        <label class="block text-sm font-bold mb-2">How long have you been on this step?</label>
-        <div class="flex gap-2 mb-3">
-          <div class="flex-1">
-            <input
-              v-model.number="hoursOnStep"
-              type="number"
-              min="0"
-              max="24"
-              placeholder="Hours"
-              class="input-field w-full"
-            />
-            <div class="text-xs text-gray-600 mt-1">Hours</div>
-          </div>
-          <div class="flex-1">
-            <input
-              v-model.number="minutesOnStep"
-              type="number"
-              min="0"
-              max="59"
-              placeholder="Minutes"
-              class="input-field w-full"
-            />
-            <div class="text-xs text-gray-600 mt-1">Minutes</div>
+        <div class="mb-4">
+          <label class="block text-sm font-bold mb-3">How long have you been on this step?</label>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <input
+                v-model.number="hoursOnStep"
+                type="number"
+                min="0"
+                max="24"
+                placeholder="0"
+                class="input-field w-full text-center"
+              />
+              <div class="text-xs text-gray-600 mt-2 text-center font-medium">Hours</div>
+            </div>
+            <div>
+              <input
+                v-model.number="minutesOnStep"
+                type="number"
+                min="0"
+                max="59"
+                placeholder="0"
+                class="input-field w-full text-center"
+              />
+              <div class="text-xs text-gray-600 mt-2 text-center font-medium">Minutes</div>
+            </div>
           </div>
         </div>
 
-        <button @click="calculatePace" class="btn btn-primary w-full">
+        <button @click="calculatePace" class="btn btn-primary w-full" :disabled="!selectedStepId">
           Calculate Pace
         </button>
       </div>
 
       <!-- Pace Display -->
-      <div v-if="paceData" class="card">
-        <div class="flex justify-between items-start mb-2">
-          <div class="text-lg font-bold">{{ paceData.message }}</div>
+      <div v-if="paceData" class="card border-l-4" :class="paceData.paceStatus === 'ahead' ? 'border-l-green-600' : paceData.paceStatus === 'behind' ? 'border-l-orange-600' : 'border-l-blue-600'">
+        <div class="flex justify-between items-start mb-4">
+          <div>
+            <div class="text-sm font-medium text-gray-600 mb-1">PACE STATUS</div>
+            <div class="text-xl font-bold text-gray-900">{{ paceData.message }}</div>
+          </div>
           <button
             @click="openEditTargetModal"
-            class="text-lg hover:text-gray-700 p-1 rounded"
+            class="text-xl hover:text-gray-700 p-2 hover:bg-gray-100 rounded transition-colors"
             title="Edit target time"
             aria-label="Edit target completion time"
           >
             ✏️
           </button>
         </div>
-        <div class="text-sm text-gray-600 mb-3">
-          <p><strong>Projected finish:</strong> {{ formatTime(paceData.projectedCompletion) }}</p>
-          <p><strong>Original target:</strong> {{ formatTime(new Date(activeBakeStore.bake.originalTargetTime)) }}</p>
+
+        <div class="bg-gray-50 p-3 rounded mb-3 border border-gray-200">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <div class="text-xs font-medium text-gray-600 uppercase tracking-wide mb-1">Projected finish</div>
+              <div class="text-lg font-bold text-gray-900">{{ formatTime(paceData.projectedCompletion) }}</div>
+            </div>
+            <div>
+              <div class="text-xs font-medium text-gray-600 uppercase tracking-wide mb-1">Original target</div>
+              <div class="text-lg font-bold text-gray-900">{{ formatTime(new Date(activeBakeStore.bake.originalTargetTime)) }}</div>
+            </div>
+          </div>
         </div>
 
-        <div v-if="paceData.paceStatus === 'ahead'" class="text-sm text-green-700 mb-3">
-          You're finishing early! You could extend fermentation time.
+        <div v-if="paceData.paceStatus === 'ahead'" class="bg-green-50 border border-green-200 text-green-800 p-3 rounded text-sm font-medium">
+          ✨ You're finishing early! Consider extending fermentation time for better flavor.
         </div>
-        <div v-else-if="paceData.paceStatus === 'behind'" class="text-sm text-orange-700 mb-3">
-          You're running late. You could fast-track remaining steps.
+        <div v-else-if="paceData.paceStatus === 'behind'" class="bg-orange-50 border border-orange-200 text-orange-800 p-3 rounded text-sm font-medium">
+          ⚠️ You're running behind schedule. You could fast-track remaining steps.
+        </div>
+        <div v-else class="bg-blue-50 border border-blue-200 text-blue-800 p-3 rounded text-sm font-medium">
+          ✓ You're right on pace for your target completion time!
         </div>
       </div>
 

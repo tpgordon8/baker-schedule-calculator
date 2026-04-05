@@ -170,7 +170,21 @@ const editTargetDate = ref('')
 const editTargetTime = ref('')
 
 const availableSteps = computed(() => {
-  return activeBakeStore.schedule
+  if (activeBakeStore.schedule && activeBakeStore.schedule.length > 0) {
+    return activeBakeStore.schedule
+  }
+  // Fallback: if no schedule, generate steps from template
+  if (!activeBakeStore.bake) return []
+  const template = activeBakeStore.bake.template
+  if (!template || !template.workflow) return []
+
+  return Object.entries(template.workflow)
+    .filter(([_, step]) => !step.withinBulk)
+    .map(([stepId, stepData]) => ({
+      stepId,
+      stepName: stepData.name || stepId,
+      duration: stepData.minutes
+    }))
 })
 
 const remainingSteps = computed(() => {

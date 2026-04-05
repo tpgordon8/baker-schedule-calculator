@@ -5,7 +5,12 @@ export const useTemplatesStore = defineStore('templates', () => {
   // Default sourdough template
   const defaultTemplate = {
     id: 'default-sourdough',
-    name: 'Standard Sourdough',
+    name: 'Sourdough (Standard)',
+    type: 'sourdough',
+    category: 'bread',
+    difficulty: 'intermediate',
+    description: 'Classic weekday sourdough with flexible timing',
+    sourceUrl: null,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     workflow: {
@@ -16,6 +21,7 @@ export const useTemplatesStore = defineStore('templates', () => {
       stretchAndFold: { minutes: 120, withinBulk: true, description: '4-6 sets every 30 min' },
       benchRest: { minutes: 30, description: 'Shape and rest after bulk' },
       finalProof: { minutes: 120, min: 60, max: 2880, description: 'Cold or room temp (1-48 hours)' },
+      preheat: { minutes: 30, min: 15, max: 60, temperature: 450, tempUnit: 'F', description: 'Preheat oven to 450°F' },
       bake: { minutes: 45, coveredMinutes: 25, uncoveredMinutes: 20, temp: 450, description: 'With/without Dutch oven lid' },
       cool: { minutes: 90, description: 'Cool before slicing' }
     }

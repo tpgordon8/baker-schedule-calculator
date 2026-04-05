@@ -47,6 +47,29 @@
     </div>
 
     <div class="card">
+      <label class="block text-sm font-bold mb-2">Oven Preheat Time</label>
+      <div class="space-y-2">
+        <label class="flex items-center">
+          <input v-model="preheatDuration" type="radio" value="15" class="mr-2" />
+          <span>15 minutes (quick preheat)</span>
+        </label>
+        <label class="flex items-center">
+          <input v-model="preheatDuration" type="radio" value="30" class="mr-2" />
+          <span>30 minutes (standard) - Default</span>
+        </label>
+        <label class="flex items-center">
+          <input v-model="preheatDuration" type="radio" value="45" class="mr-2" />
+          <span>45 minutes (extra time)</span>
+        </label>
+        <label class="flex items-center">
+          <input v-model="preheatDuration" type="radio" value="60" class="mr-2" />
+          <span>60 minutes (thorough preheat)</span>
+        </label>
+      </div>
+      <p class="text-xs text-gray-600 mt-2">🔥 Preheat oven to 450°F</p>
+    </div>
+
+    <div class="card">
       <label class="block text-sm font-bold mb-2">Final Proof Method</label>
       <div class="space-y-2">
         <label class="flex items-center">
@@ -69,7 +92,7 @@
     </button>
 
     <div v-if="schedule.length" class="mt-8">
-      <h3 class="text-lg font-bold mb-4">Your Sourdough Timeline</h3>
+      <h3 class="text-lg font-bold mb-4">Your {{ selectedTemplate.name || 'Bake' }} Timeline</h3>
       <ScheduleTimeline :schedule="schedule" :target-time="targetTime" />
 
       <div class="mt-6 flex gap-2">
@@ -98,12 +121,23 @@ const activeBakeStore = useActiveBakeStore()
 const targetDateTime = ref('')
 const bulkDuration = ref('360')
 const customBulkDuration = ref(360)
+const preheatDuration = ref('30')
 const proofMethod = ref('room-temp')
 const loading = ref(false)
 const schedule = ref([])
 
 // Get template from localStorage (set in HomeView)
-const selectedTemplate = JSON.parse(localStorage.getItem('selectedTemplate') || '{}')
+// Ensure template has metadata fields
+const selectedTemplate = (() => {
+  const template = JSON.parse(localStorage.getItem('selectedTemplate') || '{}')
+  return {
+    type: template.type || 'bread',
+    category: template.category || 'bread',
+    difficulty: template.difficulty || 'intermediate',
+    description: template.description || '',
+    ...template
+  }
+})()
 
 const targetTime = computed(() => {
   if (!targetDateTime.value) return null
@@ -123,6 +157,9 @@ function generateSchedule() {
 
   const actualBulkDuration = bulkDuration.value === 'custom' ? customBulkDuration.value : parseInt(bulkDuration.value)
   workingTemplate.workflow.bulkFermentation.minutes = actualBulkDuration
+
+  const actualPreheatDuration = parseInt(preheatDuration.value)
+  workingTemplate.workflow.preheat.minutes = actualPreheatDuration
 
   if (proofMethod.value === 'cold-proof') {
     workingTemplate.workflow.finalProof.minutes = 24 * 60 // 24 hours default

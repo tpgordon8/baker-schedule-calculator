@@ -15,6 +15,7 @@ export function useScheduleCalculator() {
     const steps = [
       { id: 'cool', name: 'Cool', minutes: workflow.cool.minutes, description: workflow.cool.description },
       { id: 'bake', name: 'Bake', minutes: workflow.bake.minutes, description: workflow.bake.description },
+      { id: 'preheat', name: 'Preheat Oven', minutes: workflow.preheat.minutes, description: workflow.preheat.description },
       { id: 'finalProof', name: 'Final Proof', minutes: workflow.finalProof.minutes, description: workflow.finalProof.description },
       { id: 'benchRest', name: 'Bench Rest', minutes: workflow.benchRest.minutes, description: workflow.benchRest.description },
       { id: 'bulkFermentation', name: 'Bulk Fermentation', minutes: workflow.bulkFermentation.minutes, description: workflow.bulkFermentation.description },

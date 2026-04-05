@@ -89,4 +89,6 @@ export const useActiveBakeStore = defineStore('activeBake', () => {
     updatePace,
     adjustTarget
   }
+}, {
+  persist: true
 })

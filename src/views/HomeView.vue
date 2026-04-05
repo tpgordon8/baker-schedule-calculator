@@ -1,18 +1,21 @@
 <template>
   <div>
     <!-- Active Bake Banner -->
-    <div v-if="activeBakeStore.isActive" class="card border-l-4 border-gray-900 mb-6">
-      <div class="text-sm text-gray-600">Active Bake</div>
-      <div class="font-bold">Started: {{ formatTime(activeBakeStore.bake.actualStartTime) }}</div>
-      <div class="text-xs text-gray-600">Elapsed: {{ formatElapsed(activeBakeStore.bake.actualStartTime) }}</div>
-      <div class="flex gap-2 mt-3">
+    <div v-if="activeBakeStore.isActive" class="card border-l-4 border-gray-900 mb-6 bg-gray-50">
+      <div class="text-sm font-bold text-gray-700 mb-2">🍞 You Have an Active Bake</div>
+      <div class="text-sm">Started at <strong>{{ formatTime(activeBakeStore.bake.actualStartTime) }}</strong></div>
+      <div class="text-xs text-gray-600">Elapsed: <strong>{{ formatElapsed(activeBakeStore.bake.actualStartTime) }}</strong></div>
+      <div class="flex gap-2 mt-4">
         <RouterLink to="/resume" class="btn btn-primary flex-1">
-          Check Progress
+          ✓ Check Progress
         </RouterLink>
-        <button @click="startNewBake" class="btn flex-1">
-          Start New
-        </button>
+        <RouterLink to="/tracker" class="btn flex-1">
+          📊 Track Steps
+        </RouterLink>
       </div>
+      <button @click="endCurrentBake" class="btn w-full mt-2 text-gray-600">
+        Start Different Bake
+      </button>
     </div>
 
     <h2 class="text-2xl font-bold mb-6">{{ activeBakeStore.isActive ? 'Or start another bake' : 'Start a New Bake' }}</h2>
@@ -91,8 +94,9 @@ function formatElapsed(startTime) {
   return `${hours}h ${minutes}m`
 }
 
-function startNewBake() {
-  if (confirm('Start a new bake? Your current bake progress will be saved.')) {
+function endCurrentBake() {
+  if (confirm('Start a different bake? Your current progress will still be saved if you want to resume it later.')) {
+    activeBakeStore.clearBake()
     selectedTemplate.value = null
     localStorage.removeItem('selectedTemplate')
   }

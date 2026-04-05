@@ -11,6 +11,9 @@
         <div class="text-sm text-gray-600">Target Completion Time</div>
         <div class="text-2xl font-bold">{{ formatTime(activeBakeStore.bake.targetCompletionTime) }}</div>
         <div class="text-sm text-gray-600">{{ formatDate(activeBakeStore.bake.targetCompletionTime) }}</div>
+        <div v-if="activeBakeStore.pace" class="text-xs text-gray-600 mt-2 p-2 bg-gray-50">
+          <p>{{ activeBakeStore.pace.message }}</p>
+        </div>
       </div>
 
       <h3 class="text-lg font-bold mb-4">Steps</h3>
@@ -27,12 +30,14 @@
         />
       </div>
 
-      <button
-        @click="endBake"
-        class="btn w-full mt-8"
-      >
-        Finish Bake
-      </button>
+      <div class="flex gap-2 mt-8">
+        <RouterLink to="/resume" class="btn flex-1">
+          📊 Check Pace
+        </RouterLink>
+        <button @click="endBake" class="btn flex-1">
+          Finish Bake
+        </button>
+      </div>
     </div>
 
     <AdjustmentModal

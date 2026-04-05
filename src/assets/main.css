@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Minimal "nothing style" - only essential utilities */
+/* Minimal "nothing style" - only essential utilities + mobile optimizations */
 @layer components {
   .btn {
-    @apply px-4 py-2 border border-gray-900 hover:bg-gray-900 hover:text-white transition-colors;
+    @apply px-4 py-2 border border-gray-900 hover:bg-gray-900 hover:text-white transition-colors cursor-pointer;
+    /* Mobile: 44px minimum touch target */
+    @apply min-h-11;
+    /* Accessibility: focus states */
+    @apply focus:outline-2 focus:outline-offset-2 focus:outline-gray-900;
   }
 
   .btn-primary {
@@ -13,15 +17,20 @@
   }
 
   .input-field {
-    @apply w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-gray-900;
+    @apply w-full px-4 py-3 border border-gray-300 focus:outline-none focus:border-gray-900 text-base;
+    /* Mobile: 16px+ font prevents auto-zoom on iOS */
+    @apply min-h-11 focus:outline-2 focus:outline-offset-1 focus:outline-gray-900;
   }
 
   .card {
-    @apply border border-gray-300 p-4 mb-4;
+    @apply border border-gray-300 p-4 mb-4 rounded;
   }
 
   .step-card {
-    @apply border border-gray-300 p-4 mb-3 flex justify-between items-center;
+    @apply border border-gray-300 p-4 mb-3 flex justify-between items-center gap-3 rounded;
+    /* Responsive layout for mobile */
+    @apply flex-col sm:flex-row;
+    @apply items-start sm:items-center;
   }
 
   .timeline-item {

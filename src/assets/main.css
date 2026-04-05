@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimal "nothing style" - only essential utilities */
+@layer components {
+  .btn {
+    @apply px-4 py-2 border border-gray-900 hover:bg-gray-900 hover:text-white transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-gray-900 text-white border-gray-900 hover:bg-gray-800;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-gray-900;
+  }
+
+  .card {
+    @apply border border-gray-300 p-4 mb-4;
+  }
+
+  .step-card {
+    @apply border border-gray-300 p-4 mb-3 flex justify-between items-center;
+  }
+
+  .timeline-item {
+    @apply relative pl-8 pb-6;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background: gray;
+    border: 2px solid white;
+    border-radius: 50%;
+  }
+
+  .timeline-item.completed::before {
+    @apply bg-gray-900;
+  }
+
+  .timeline-item.pending::before {
+    @apply bg-gray-300;
+  }
+}

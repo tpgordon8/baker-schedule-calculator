@@ -210,6 +210,11 @@
       </div>
     </div>
 
+    <!-- Error/Status Messages -->
+    <div v-if="error" class="p-3 rounded mb-4" :class="error.includes('✅') ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'">
+      {{ error }}
+    </div>
+
     <!-- Navigation Buttons -->
     <div class="flex gap-2 mt-6">
       <RouterLink to="/" class="btn">Cancel</RouterLink>
@@ -265,6 +270,7 @@ const completedStepIds = ref([])
 const currentStepId = ref('')
 const currentStepHours = ref(0)
 const currentStepMinutes = ref(0)
+const error = ref('')
 
 // Computed properties
 const templates = computed(() => templatesStore.templates)
@@ -402,7 +408,9 @@ function previousStep() {
   }
 }
 
-function joinBake() {
+async function joinBake() {
+  error.value = ''
+
   console.log('joinBake() called', {
     selectedTemplate: selectedTemplate.value?.name,
     actualStartDateTime: actualStartDateTime.value,
@@ -411,20 +419,41 @@ function joinBake() {
     completedStepIds: completedStepIds.value
   })
 
+  // Validation
   if (!selectedTemplate.value) {
+    error.value = '❌ Please select a template'
     console.error('joinBake: No template selected')
     return
   }
-  if (!actualStartDateTime.value) {
+  if (!actualStartDate.value || !actualStartTime.value) {
+    error.value = '❌ Please enter actual start date and time'
     console.error('joinBake: No actual start date/time')
     return
   }
-  if (!targetDateTime.value) {
+  if (!actualStartDateTime.value) {
+    error.value = '❌ Invalid start date/time format'
+    console.error('joinBake: actualStartDateTime is null')
+    return
+  }
+  if (!targetDate.value || !targetTime.value) {
+    error.value = '❌ Please enter target completion date and time'
     console.error('joinBake: No target date/time')
+    return
+  }
+  if (!targetDateTime.value) {
+    error.value = '❌ Invalid target date/time format'
+    console.error('joinBake: targetDateTime is null')
+    return
+  }
+  if (!currentStepId.value) {
+    error.value = '❌ Please select your current step'
+    console.error('joinBake: No current step selected')
     return
   }
 
   try {
+    error.value = '✅ Joining bake...'
+
     // Initialize bake with retroactive data
     activeBakeStore.initializeBake(targetDateTime.value.toISOString(), selectedTemplate.value)
 
@@ -440,6 +469,12 @@ function joinBake() {
       selectedTemplate.value,
       targetDateTime.value.toISOString()
     )
+
+    if (!schedule || schedule.length === 0) {
+      error.value = '❌ Failed to generate schedule'
+      console.error('joinBake: Schedule generation failed')
+      return
+    }
 
     // Mark completed steps
     schedule.forEach(step => {
@@ -469,10 +504,13 @@ function joinBake() {
     }
 
     console.log('joinBake: Success, navigating to /tracker')
-    // Navigate to tracker
+
+    // Wait briefly to show success message, then navigate
+    await new Promise(resolve => setTimeout(resolve, 500))
     router.push('/tracker')
-  } catch (error) {
-    console.error('joinBake: Error occurred', error)
+  } catch (err) {
+    console.error('joinBake: Error occurred', err)
+    error.value = `❌ Error: ${err.message || 'Unknown error'}`
   }
 }
 </script>

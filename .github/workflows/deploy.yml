@@ -1,4 +1,4 @@
-name: Deploy to Vercel
+name: Code Quality Checks
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  check:
     runs-on: ubuntu-latest
 
     steps:
@@ -31,11 +31,3 @@ jobs:
 
       - name: Build application
         run: npm run build
-
-      - name: Deploy to Vercel
-        uses: vercel/action@v4
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          scope: ${{ secrets.VERCEL_ORG_ID }}

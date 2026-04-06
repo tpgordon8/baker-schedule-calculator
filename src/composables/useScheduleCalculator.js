@@ -2,27 +2,59 @@ import { subMinutes, format } from 'date-fns'
 
 export function useScheduleCalculator() {
   /**
+   * Ensure a value is a Date object
+   * @param {Date|string} dateValue - Date or ISO string
+   * @returns {Date} Date object
+   */
+  const ensureDate = (dateValue) => {
+    if (!dateValue) return null
+    if (dateValue instanceof Date) return dateValue
+    if (typeof dateValue === 'string') return new Date(dateValue)
+    return null
+  }
+
+  /**
    * Calculate complete schedule working backward from target completion time
-   * @param {Date} targetCompletionTime - When the loaf should be done and cooled
+   * @param {Date|string} targetCompletionTime - When the loaf should be done and cooled
    * @param {Object} template - Workflow template with durations
    * @returns {Array} Schedule with all steps and timestamps
    */
   function generateSchedule(targetCompletionTime, template) {
+    if (!template || !template.workflow) {
+      console.error('generateSchedule: Invalid template', template)
+      return []
+    }
+
     const workflow = template.workflow
-    let currentTime = new Date(targetCompletionTime)
+    const targetDate = ensureDate(targetCompletionTime)
+    if (!targetDate) {
+      console.error('generateSchedule: Invalid target completion time', targetCompletionTime)
+      return []
+    }
+    let currentTime = targetDate
+
+    // Helper function to safely get workflow step with defaults
+    const getStep = (stepId, defaultMinutes = 0) => {
+      const step = workflow[stepId]
+      if (!step || typeof step.minutes !== 'number') {
+        console.warn(`generateSchedule: Missing or invalid step '${stepId}'`)
+        return { minutes: defaultMinutes, description: '' }
+      }
+      return step
+    }
 
     // Work backward through the workflow
     const steps = [
-      { id: 'cool', name: 'Cool', minutes: workflow.cool.minutes, description: workflow.cool.description },
-      { id: 'bake', name: 'Bake', minutes: workflow.bake.minutes, description: workflow.bake.description },
-      { id: 'preheat', name: 'Preheat Oven', minutes: workflow.preheat.minutes, description: workflow.preheat.description },
-      { id: 'finalProof', name: 'Final Proof', minutes: workflow.finalProof.minutes, description: workflow.finalProof.description },
-      { id: 'benchRest', name: 'Bench Rest', minutes: workflow.benchRest.minutes, description: workflow.benchRest.description },
-      { id: 'bulkFermentation', name: 'Bulk Fermentation', minutes: workflow.bulkFermentation.minutes, description: workflow.bulkFermentation.description },
-      { id: 'stretchAndFold', name: 'Stretch & Fold', minutes: workflow.stretchAndFold.minutes, withinBulk: true, description: workflow.stretchAndFold.description },
-      { id: 'mix', name: 'Mix Dough', minutes: workflow.mix.minutes, description: workflow.mix.description },
-      { id: 'autolyse', name: 'Autolyse', minutes: workflow.autolyse.minutes, description: workflow.autolyse.description },
-      { id: 'feedStarter', name: 'Feed Starter', minutes: workflow.feedStarter.minutes, description: workflow.feedStarter.description }
+      { id: 'cool', name: 'Cool', ...getStep('cool', 90), description: workflow.cool?.description || 'Cool before slicing' },
+      { id: 'bake', name: 'Bake', ...getStep('bake', 45), description: workflow.bake?.description || 'Bake loaf' },
+      { id: 'preheat', name: 'Preheat Oven', ...getStep('preheat', 30), description: workflow.preheat?.description || 'Preheat oven' },
+      { id: 'finalProof', name: 'Final Proof', ...getStep('finalProof', 120), description: workflow.finalProof?.description || 'Final rise' },
+      { id: 'benchRest', name: 'Bench Rest', ...getStep('benchRest', 30), description: workflow.benchRest?.description || 'Bench rest' },
+      { id: 'bulkFermentation', name: 'Bulk Fermentation', ...getStep('bulkFermentation', 360), description: workflow.bulkFermentation?.description || 'Bulk rise' },
+      { id: 'stretchAndFold', name: 'Stretch & Fold', ...getStep('stretchAndFold', 120), withinBulk: true, description: workflow.stretchAndFold?.description || 'Stretch & fold' },
+      { id: 'mix', name: 'Mix Dough', ...getStep('mix', 10), description: workflow.mix?.description || 'Mix dough' },
+      { id: 'autolyse', name: 'Autolyse', ...getStep('autolyse', 30), description: workflow.autolyse?.description || 'Autolyse' },
+      { id: 'feedStarter', name: 'Feed Starter', ...getStep('feedStarter', 180), description: workflow.feedStarter?.description || 'Feed starter' }
     ]
 
     const schedule = []

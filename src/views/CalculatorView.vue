@@ -155,13 +155,23 @@ function generateSchedule() {
   // Update template with user selections
   const workingTemplate = JSON.parse(JSON.stringify(selectedTemplate))
 
+  // Validate template structure before mutation
+  if (!workingTemplate || !workingTemplate.workflow) {
+    error.value = '❌ Invalid template - please select a valid bake template'
+    return
+  }
+
   const actualBulkDuration = bulkDuration.value === 'custom' ? customBulkDuration.value : parseInt(bulkDuration.value)
-  workingTemplate.workflow.bulkFermentation.minutes = actualBulkDuration
+  if (workingTemplate.workflow.bulkFermentation && typeof actualBulkDuration === 'number') {
+    workingTemplate.workflow.bulkFermentation.minutes = actualBulkDuration
+  }
 
   const actualPreheatDuration = parseInt(preheatDuration.value)
-  workingTemplate.workflow.preheat.minutes = actualPreheatDuration
+  if (workingTemplate.workflow.preheat && typeof actualPreheatDuration === 'number') {
+    workingTemplate.workflow.preheat.minutes = actualPreheatDuration
+  }
 
-  if (proofMethod.value === 'cold-proof') {
+  if (proofMethod.value === 'cold-proof' && workingTemplate.workflow.finalProof) {
     workingTemplate.workflow.finalProof.minutes = 24 * 60 // 24 hours default
   }
 

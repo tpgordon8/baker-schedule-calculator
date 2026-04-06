@@ -85,7 +85,19 @@ export const useTemplatesStore = defineStore('templates', () => {
 
   function importTemplate(jsonString) {
     try {
+      if (!jsonString || typeof jsonString !== 'string') {
+        console.error('importTemplate: Invalid input - expected JSON string')
+        return { error: 'Invalid input format' }
+      }
+
       const imported = JSON.parse(jsonString)
+
+      // Validate template structure
+      if (!imported || !imported.workflow) {
+        console.error('importTemplate: Template missing required workflow property')
+        return { error: 'Invalid template: missing workflow' }
+      }
+
       const newTemplate = {
         ...imported,
         id: Date.now().toString(),
@@ -95,7 +107,8 @@ export const useTemplatesStore = defineStore('templates', () => {
       templates.value.push(newTemplate)
       return newTemplate
     } catch (e) {
-      return null
+      console.error('importTemplate: JSON parse failed', e.message)
+      return { error: `Failed to import: ${e.message}` }
     }
   }
 

@@ -320,9 +320,11 @@ const targetTimeError = computed(() => {
 
 const currentStepError = computed(() => {
   if (!currentStepId.value) return ''
+  if (!workflowSteps.value || workflowSteps.value.length === 0) return 'No steps available'
   const totalElapsed = currentStepHours.value * 60 + currentStepMinutes.value
-  const currentStep = workflowSteps.value.find(s => s.stepId === currentStepId.value)
+  const currentStep = workflowSteps.value.find(s => s?.stepId === currentStepId.value)
   if (!currentStep) return 'Step not found'
+  if (typeof currentStep.duration !== 'number') return 'Invalid step duration'
   if (totalElapsed > currentStep.duration) {
     return `Time on current step (${totalElapsed}m) exceeds step duration (${currentStep.duration}m)`
   }

@@ -1,0 +1,306 @@
+{
+  "config": {
+    "configFile": "/tmp/baker-schedule-calculator/playwright.config.js",
+    "rootDir": "/tmp/baker-schedule-calculator/tests/e2e",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/tmp/baker-schedule-calculator/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/tmp/baker-schedule-calculator/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.js"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/tmp/baker-schedule-calculator/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "/tmp/baker-schedule-calculator/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.js"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/tmp/baker-schedule-calculator/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "ios",
+        "name": "ios",
+        "testDir": "/tmp/baker-schedule-calculator/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.js"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results/junit.xml"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 2,
+    "webServer": {
+      "command": "npm run dev",
+      "url": "http://localhost:5173",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "smoke.spec.js",
+      "file": "smoke.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Smoke Tests",
+          "file": "smoke.spec.js",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should load the home page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "2c14808d47b386fba9eb-4484afb7b841ed9758f1",
+              "file": "smoke.spec.js",
+              "line": 4,
+              "column": 3
+            },
+            {
+              "title": "should have no console errors on load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "2c14808d47b386fba9eb-ca248828b21f3023d874",
+              "file": "smoke.spec.js",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "should have responsive viewport on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "2c14808d47b386fba9eb-c77a74241855aa69c748",
+              "file": "smoke.spec.js",
+              "line": 34,
+              "column": 3
+            },
+            {
+              "title": "should load the home page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "2c14808d47b386fba9eb-f3ff769d700f87bb2bd0",
+              "file": "smoke.spec.js",
+              "line": 4,
+              "column": 3
+            },
+            {
+              "title": "should have no console errors on load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "2c14808d47b386fba9eb-c32819f7f9f199406083",
+              "file": "smoke.spec.js",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "should have responsive viewport on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "2c14808d47b386fba9eb-8e61edc2d8657a82e90e",
+              "file": "smoke.spec.js",
+              "line": 34,
+              "column": 3
+            },
+            {
+              "title": "should load the home page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "2c14808d47b386fba9eb-c8d2db41266326088bbc",
+              "file": "smoke.spec.js",
+              "line": 4,
+              "column": 3
+            },
+            {
+              "title": "should have no console errors on load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "2c14808d47b386fba9eb-5fbee0b5dde20cf4ec48",
+              "file": "smoke.spec.js",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "should have responsive viewport on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "2c14808d47b386fba9eb-455975dc94787f345d6a",
+              "file": "smoke.spec.js",
+              "line": 34,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-04-06T01:04:17.657Z",
+    "duration": 32.61200000000008,
+    "expected": 0,
+    "skipped": 9,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

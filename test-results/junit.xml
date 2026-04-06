@@ -1,0 +1,44 @@
+<testsuites id="" name="" tests="9" failures="0" skipped="9" errors="0" time="0.03261200000000008">
+<testsuite name="smoke.spec.js" timestamp="2026-04-06T01:04:17.688Z" hostname="chromium" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Smoke Tests › should load the home page" classname="smoke.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Smoke Tests › should have no console errors on load" classname="smoke.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Smoke Tests › should have responsive viewport on mobile" classname="smoke.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="smoke.spec.js" timestamp="2026-04-06T01:04:17.688Z" hostname="mobile" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Smoke Tests › should load the home page" classname="smoke.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Smoke Tests › should have no console errors on load" classname="smoke.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Smoke Tests › should have responsive viewport on mobile" classname="smoke.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="smoke.spec.js" timestamp="2026-04-06T01:04:17.688Z" hostname="ios" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Smoke Tests › should load the home page" classname="smoke.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Smoke Tests › should have no console errors on load" classname="smoke.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Smoke Tests › should have responsive viewport on mobile" classname="smoke.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>

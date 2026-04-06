@@ -466,8 +466,8 @@ async function joinBake() {
 
     // Generate schedule
     const schedule = generateSchedule(
-      selectedTemplate.value,
-      targetDateTime.value.toISOString()
+      targetDateTime.value,
+      selectedTemplate.value
     )
 
     if (!schedule || schedule.length === 0) {

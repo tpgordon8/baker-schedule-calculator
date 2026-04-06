@@ -487,6 +487,17 @@ async function joinBake() {
     // Update schedule
     activeBakeStore.updateSchedule(schedule)
 
+    // Validate schedule before pace calculation
+    const invalidSteps = schedule.filter(s =>
+      !s || !s.stepId || typeof s.duration !== 'number' || !s.stepName
+    )
+    if (invalidSteps.length > 0) {
+      const invalidNames = invalidSteps.map(s => s?.stepName || s?.stepId || 'unknown').join(', ')
+      error.value = `❌ Invalid step data: ${invalidNames}`
+      console.error('joinBake: Invalid steps found:', invalidSteps)
+      return
+    }
+
     // Calculate retroactive pace
     const paceData = calculatePace(
       schedule,
@@ -499,9 +510,13 @@ async function joinBake() {
       targetDateTime.value
     )
 
-    if (paceData) {
-      activeBakeStore.updatePace(paceData)
+    if (!paceData) {
+      error.value = '❌ Failed to calculate pace - please verify your step selections'
+      console.error('joinBake: calculatePace returned null')
+      return
     }
+
+    activeBakeStore.updatePace(paceData)
 
     console.log('joinBake: Success, navigating to /tracker')
 

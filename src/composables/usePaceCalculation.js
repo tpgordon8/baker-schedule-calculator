@@ -23,13 +23,27 @@ export function usePaceCalculation() {
     // Find current step and calculate planned elapsed time
     const currentStepIndex = schedule.findIndex(s => s.stepId === currentStepId)
     if (currentStepIndex === -1) {
+      console.warn('calculatePace: current step not found', currentStepId)
+      return null
+    }
+
+    // Validate current step has required properties
+    const currentStep = schedule[currentStepIndex]
+    if (!currentStep || typeof currentStep.duration !== 'number') {
+      console.warn('calculatePace: current step invalid', { currentStepIndex, currentStep })
       return null
     }
 
     // Sum duration of all completed steps (before current step)
     let plannedElapsedMinutes = 0
     for (let i = 0; i < currentStepIndex; i++) {
-      plannedElapsedMinutes += schedule[i].duration
+      const step = schedule[i]
+      // Safe property access with fallback
+      if (!step || typeof step.duration !== 'number') {
+        console.warn(`calculatePace: invalid step at index ${i}`, { step })
+        continue
+      }
+      plannedElapsedMinutes += step.duration
     }
 
     // Calculate variance
@@ -41,10 +55,16 @@ export function usePaceCalculation() {
     // Calculate remaining time and projected completion
     let remainingMinutes = 0
     for (let i = currentStepIndex + 1; i < schedule.length; i++) {
-      remainingMinutes += schedule[i].duration
+      const step = schedule[i]
+      // Safe property access with fallback
+      if (!step || typeof step.duration !== 'number') {
+        console.warn(`calculatePace: invalid step at index ${i}`, { step })
+        continue
+      }
+      remainingMinutes += step.duration
     }
     // Add current step's remaining time (estimate: half of duration if partially complete)
-    remainingMinutes += Math.ceil(schedule[currentStepIndex].duration / 2)
+    remainingMinutes += Math.ceil(currentStep.duration / 2)
 
     const projectedCompletionMs = nowMs + remainingMinutes * 60000
     const projectedCompletion = new Date(projectedCompletionMs)

@@ -1,4 +1,4 @@
-import { test, expect, devices } from '@playwright/test'
+import { test, expect } from '@playwright/test'
 
 test.describe('Mobile: Viewport & Responsiveness', () => {
   test('should be responsive on iPhone 12', async ({ page }) => {

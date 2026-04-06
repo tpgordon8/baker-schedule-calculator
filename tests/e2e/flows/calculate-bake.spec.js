@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { goToPage, clickButton, fillInput, waitForText, expectTextVisible } from '../helpers/ui-helpers'
+import { goToPage, clickButton, expectTextVisible } from '../helpers/ui-helpers'
 
 test.describe('Calculate Bake Flow', () => {
   test.beforeEach(async ({ page }) => {

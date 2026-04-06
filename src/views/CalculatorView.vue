@@ -125,6 +125,7 @@ const preheatDuration = ref('30')
 const proofMethod = ref('room-temp')
 const loading = ref(false)
 const schedule = ref([])
+const error = ref('')
 
 // Get template from localStorage (set in HomeView)
 // Ensure template has metadata fields

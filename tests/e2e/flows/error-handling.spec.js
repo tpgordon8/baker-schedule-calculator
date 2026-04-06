@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { goToPage, expectTextVisible } from '../helpers/ui-helpers'
+import { goToPage } from '../helpers/ui-helpers'
 
 test.describe('Error Handling & Bug Fixes', () => {
   test('should handle missing template properties gracefully', async ({ page }) => {

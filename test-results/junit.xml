@@ -1,5 +1,157 @@
-<testsuites id="" name="" tests="9" failures="0" skipped="9" errors="0" time="0.03261200000000008">
-<testsuite name="smoke.spec.js" timestamp="2026-04-06T01:04:17.688Z" hostname="chromium" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testsuites id="" name="" tests="144" failures="0" skipped="144" errors="0" time="0.14176999999999998">
+<testsuite name="flows/calculate-bake.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="chromium" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Calculate Bake Flow › should load home page and show calculate option" classname="flows/calculate-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Calculate Bake Flow › should validate target time is required" classname="flows/calculate-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Calculate Bake Flow › should generate schedule with valid inputs" classname="flows/calculate-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="flows/error-handling.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="chromium" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Error Handling &amp; Bug Fixes › should handle missing template properties gracefully" classname="flows/error-handling.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Error Handling &amp; Bug Fixes › should handle invalid form inputs without crashing" classname="flows/error-handling.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Error Handling &amp; Bug Fixes › should validate type consistency for dates" classname="flows/error-handling.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Error Handling &amp; Bug Fixes › should provide user-friendly error messages" classname="flows/error-handling.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="flows/join-existing-bake.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="chromium" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="Join Existing Bake Flow › should navigate to join existing bake page" classname="flows/join-existing-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Join Existing Bake Flow › Step 4: StepChecklist should render checkboxes, not JavaScript code" classname="flows/join-existing-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Join Existing Bake Flow › should show validation errors for incomplete form" classname="flows/join-existing-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Join Existing Bake Flow › Step 7: Should submit successfully with all fields filled" classname="flows/join-existing-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Join Existing Bake Flow › should show error message if submission fails" classname="flows/join-existing-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="flows/templates.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="chromium" tests="2" failures="0" skipped="2" time="0" errors="0">
+<testcase name="Template Management › should load templates view" classname="flows/templates.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Template Management › should display available templates" classname="flows/templates.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="flows/tracker.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="chromium" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Tracker View › should load tracker page" classname="flows/tracker.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tracker View › should display schedule timeline with steps" classname="flows/tracker.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tracker View › should show current step information" classname="flows/tracker.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="mobile/accessibility-mobile.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="chromium" tests="6" failures="0" skipped="6" time="0" errors="0">
+<testcase name="Mobile: Accessibility (WCAG AA) › should have sufficient color contrast on mobile" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Accessibility (WCAG AA) › should have visible focus indicators" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Accessibility (WCAG AA) › should support keyboard navigation on mobile" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Accessibility (WCAG AA) › should have proper ARIA labels on interactive elements" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Accessibility (WCAG AA) › should have semantic HTML structure" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Accessibility (WCAG AA) › should handle zoom without breaking on mobile" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="mobile/mobile-viewport.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="chromium" tests="6" failures="0" skipped="6" time="0" errors="0">
+<testcase name="Mobile: Viewport &amp; Responsiveness › should be responsive on iPhone 12" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Viewport &amp; Responsiveness › should be responsive on Pixel 5" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Viewport &amp; Responsiveness › should have readable text on mobile (16px minimum)" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Viewport &amp; Responsiveness › should not have horizontal scroll on narrow viewport" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Viewport &amp; Responsiveness › should have proper spacing on mobile" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Viewport &amp; Responsiveness › should handle large text (accessibility) without breaking layout" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="mobile/touch-interactions.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="chromium" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="Mobile: Touch Interactions › should have properly sized touch targets (44px minimum)" classname="mobile/touch-interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Touch Interactions › should support tapping buttons on mobile" classname="mobile/touch-interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Touch Interactions › should allow scrolling on mobile" classname="mobile/touch-interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Touch Interactions › should handle form input on mobile keyboard" classname="mobile/touch-interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Touch Interactions › should close mobile keyboard on escape" classname="mobile/touch-interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="smoke.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="chromium" tests="3" failures="0" skipped="3" time="0" errors="0">
 <testcase name="Smoke Tests › should load the home page" classname="smoke.spec.js">
 <skipped>
 </skipped>
@@ -13,7 +165,207 @@
 </skipped>
 </testcase>
 </testsuite>
-<testsuite name="smoke.spec.js" timestamp="2026-04-06T01:04:17.688Z" hostname="mobile" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testsuite name="visual/baseline-setup.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="chromium" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="Visual Regression: Baselines › should capture home page baseline" classname="visual/baseline-setup.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Baselines › should capture calculator page baseline" classname="visual/baseline-setup.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Baselines › should capture join existing bake page baseline" classname="visual/baseline-setup.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Baselines › should capture tracker page baseline" classname="visual/baseline-setup.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Baselines › should capture templates page baseline" classname="visual/baseline-setup.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="visual/layout-regression.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="chromium" tests="6" failures="0" skipped="6" time="0" errors="0">
+<testcase name="Visual Regression: Layout Detection › should detect changes on home page" classname="visual/layout-regression.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Layout Detection › should detect layout changes on calculator" classname="visual/layout-regression.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Layout Detection › should detect form alignment issues" classname="visual/layout-regression.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Layout Detection › should detect color or style changes" classname="visual/layout-regression.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Layout Detection › should detect responsive layout shifts" classname="visual/layout-regression.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Layout Detection › should detect spacing changes" classname="visual/layout-regression.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="flows/calculate-bake.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="mobile" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Calculate Bake Flow › should load home page and show calculate option" classname="flows/calculate-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Calculate Bake Flow › should validate target time is required" classname="flows/calculate-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Calculate Bake Flow › should generate schedule with valid inputs" classname="flows/calculate-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="flows/error-handling.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="mobile" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Error Handling &amp; Bug Fixes › should handle missing template properties gracefully" classname="flows/error-handling.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Error Handling &amp; Bug Fixes › should handle invalid form inputs without crashing" classname="flows/error-handling.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Error Handling &amp; Bug Fixes › should validate type consistency for dates" classname="flows/error-handling.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Error Handling &amp; Bug Fixes › should provide user-friendly error messages" classname="flows/error-handling.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="flows/join-existing-bake.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="mobile" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="Join Existing Bake Flow › should navigate to join existing bake page" classname="flows/join-existing-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Join Existing Bake Flow › Step 4: StepChecklist should render checkboxes, not JavaScript code" classname="flows/join-existing-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Join Existing Bake Flow › should show validation errors for incomplete form" classname="flows/join-existing-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Join Existing Bake Flow › Step 7: Should submit successfully with all fields filled" classname="flows/join-existing-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Join Existing Bake Flow › should show error message if submission fails" classname="flows/join-existing-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="flows/templates.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="mobile" tests="2" failures="0" skipped="2" time="0" errors="0">
+<testcase name="Template Management › should load templates view" classname="flows/templates.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Template Management › should display available templates" classname="flows/templates.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="flows/tracker.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="mobile" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Tracker View › should load tracker page" classname="flows/tracker.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tracker View › should display schedule timeline with steps" classname="flows/tracker.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tracker View › should show current step information" classname="flows/tracker.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="mobile/accessibility-mobile.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="mobile" tests="6" failures="0" skipped="6" time="0" errors="0">
+<testcase name="Mobile: Accessibility (WCAG AA) › should have sufficient color contrast on mobile" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Accessibility (WCAG AA) › should have visible focus indicators" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Accessibility (WCAG AA) › should support keyboard navigation on mobile" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Accessibility (WCAG AA) › should have proper ARIA labels on interactive elements" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Accessibility (WCAG AA) › should have semantic HTML structure" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Accessibility (WCAG AA) › should handle zoom without breaking on mobile" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="mobile/mobile-viewport.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="mobile" tests="6" failures="0" skipped="6" time="0" errors="0">
+<testcase name="Mobile: Viewport &amp; Responsiveness › should be responsive on iPhone 12" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Viewport &amp; Responsiveness › should be responsive on Pixel 5" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Viewport &amp; Responsiveness › should have readable text on mobile (16px minimum)" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Viewport &amp; Responsiveness › should not have horizontal scroll on narrow viewport" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Viewport &amp; Responsiveness › should have proper spacing on mobile" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Viewport &amp; Responsiveness › should handle large text (accessibility) without breaking layout" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="mobile/touch-interactions.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="mobile" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="Mobile: Touch Interactions › should have properly sized touch targets (44px minimum)" classname="mobile/touch-interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Touch Interactions › should support tapping buttons on mobile" classname="mobile/touch-interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Touch Interactions › should allow scrolling on mobile" classname="mobile/touch-interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Touch Interactions › should handle form input on mobile keyboard" classname="mobile/touch-interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Touch Interactions › should close mobile keyboard on escape" classname="mobile/touch-interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="smoke.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="mobile" tests="3" failures="0" skipped="3" time="0" errors="0">
 <testcase name="Smoke Tests › should load the home page" classname="smoke.spec.js">
 <skipped>
 </skipped>
@@ -27,7 +379,207 @@
 </skipped>
 </testcase>
 </testsuite>
-<testsuite name="smoke.spec.js" timestamp="2026-04-06T01:04:17.688Z" hostname="ios" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testsuite name="visual/baseline-setup.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="mobile" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="Visual Regression: Baselines › should capture home page baseline" classname="visual/baseline-setup.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Baselines › should capture calculator page baseline" classname="visual/baseline-setup.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Baselines › should capture join existing bake page baseline" classname="visual/baseline-setup.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Baselines › should capture tracker page baseline" classname="visual/baseline-setup.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Baselines › should capture templates page baseline" classname="visual/baseline-setup.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="visual/layout-regression.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="mobile" tests="6" failures="0" skipped="6" time="0" errors="0">
+<testcase name="Visual Regression: Layout Detection › should detect changes on home page" classname="visual/layout-regression.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Layout Detection › should detect layout changes on calculator" classname="visual/layout-regression.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Layout Detection › should detect form alignment issues" classname="visual/layout-regression.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Layout Detection › should detect color or style changes" classname="visual/layout-regression.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Layout Detection › should detect responsive layout shifts" classname="visual/layout-regression.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Layout Detection › should detect spacing changes" classname="visual/layout-regression.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="flows/calculate-bake.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="ios" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Calculate Bake Flow › should load home page and show calculate option" classname="flows/calculate-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Calculate Bake Flow › should validate target time is required" classname="flows/calculate-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Calculate Bake Flow › should generate schedule with valid inputs" classname="flows/calculate-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="flows/error-handling.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="ios" tests="4" failures="0" skipped="4" time="0" errors="0">
+<testcase name="Error Handling &amp; Bug Fixes › should handle missing template properties gracefully" classname="flows/error-handling.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Error Handling &amp; Bug Fixes › should handle invalid form inputs without crashing" classname="flows/error-handling.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Error Handling &amp; Bug Fixes › should validate type consistency for dates" classname="flows/error-handling.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Error Handling &amp; Bug Fixes › should provide user-friendly error messages" classname="flows/error-handling.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="flows/join-existing-bake.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="ios" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="Join Existing Bake Flow › should navigate to join existing bake page" classname="flows/join-existing-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Join Existing Bake Flow › Step 4: StepChecklist should render checkboxes, not JavaScript code" classname="flows/join-existing-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Join Existing Bake Flow › should show validation errors for incomplete form" classname="flows/join-existing-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Join Existing Bake Flow › Step 7: Should submit successfully with all fields filled" classname="flows/join-existing-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Join Existing Bake Flow › should show error message if submission fails" classname="flows/join-existing-bake.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="flows/templates.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="ios" tests="2" failures="0" skipped="2" time="0" errors="0">
+<testcase name="Template Management › should load templates view" classname="flows/templates.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Template Management › should display available templates" classname="flows/templates.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="flows/tracker.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="ios" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="Tracker View › should load tracker page" classname="flows/tracker.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tracker View › should display schedule timeline with steps" classname="flows/tracker.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Tracker View › should show current step information" classname="flows/tracker.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="mobile/accessibility-mobile.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="ios" tests="6" failures="0" skipped="6" time="0" errors="0">
+<testcase name="Mobile: Accessibility (WCAG AA) › should have sufficient color contrast on mobile" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Accessibility (WCAG AA) › should have visible focus indicators" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Accessibility (WCAG AA) › should support keyboard navigation on mobile" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Accessibility (WCAG AA) › should have proper ARIA labels on interactive elements" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Accessibility (WCAG AA) › should have semantic HTML structure" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Accessibility (WCAG AA) › should handle zoom without breaking on mobile" classname="mobile/accessibility-mobile.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="mobile/mobile-viewport.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="ios" tests="6" failures="0" skipped="6" time="0" errors="0">
+<testcase name="Mobile: Viewport &amp; Responsiveness › should be responsive on iPhone 12" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Viewport &amp; Responsiveness › should be responsive on Pixel 5" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Viewport &amp; Responsiveness › should have readable text on mobile (16px minimum)" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Viewport &amp; Responsiveness › should not have horizontal scroll on narrow viewport" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Viewport &amp; Responsiveness › should have proper spacing on mobile" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Viewport &amp; Responsiveness › should handle large text (accessibility) without breaking layout" classname="mobile/mobile-viewport.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="mobile/touch-interactions.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="ios" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="Mobile: Touch Interactions › should have properly sized touch targets (44px minimum)" classname="mobile/touch-interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Touch Interactions › should support tapping buttons on mobile" classname="mobile/touch-interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Touch Interactions › should allow scrolling on mobile" classname="mobile/touch-interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Touch Interactions › should handle form input on mobile keyboard" classname="mobile/touch-interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Mobile: Touch Interactions › should close mobile keyboard on escape" classname="mobile/touch-interactions.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="smoke.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="ios" tests="3" failures="0" skipped="3" time="0" errors="0">
 <testcase name="Smoke Tests › should load the home page" classname="smoke.spec.js">
 <skipped>
 </skipped>
@@ -37,6 +589,54 @@
 </skipped>
 </testcase>
 <testcase name="Smoke Tests › should have responsive viewport on mobile" classname="smoke.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="visual/baseline-setup.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="ios" tests="5" failures="0" skipped="5" time="0" errors="0">
+<testcase name="Visual Regression: Baselines › should capture home page baseline" classname="visual/baseline-setup.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Baselines › should capture calculator page baseline" classname="visual/baseline-setup.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Baselines › should capture join existing bake page baseline" classname="visual/baseline-setup.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Baselines › should capture tracker page baseline" classname="visual/baseline-setup.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Baselines › should capture templates page baseline" classname="visual/baseline-setup.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="visual/layout-regression.spec.js" timestamp="2026-04-06T01:08:43.416Z" hostname="ios" tests="6" failures="0" skipped="6" time="0" errors="0">
+<testcase name="Visual Regression: Layout Detection › should detect changes on home page" classname="visual/layout-regression.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Layout Detection › should detect layout changes on calculator" classname="visual/layout-regression.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Layout Detection › should detect form alignment issues" classname="visual/layout-regression.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Layout Detection › should detect color or style changes" classname="visual/layout-regression.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Layout Detection › should detect responsive layout shifts" classname="visual/layout-regression.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Visual Regression: Layout Detection › should detect spacing changes" classname="visual/layout-regression.spec.js">
 <skipped>
 </skipped>
 </testcase>

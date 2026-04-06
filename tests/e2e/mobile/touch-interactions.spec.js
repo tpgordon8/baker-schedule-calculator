@@ -34,9 +34,6 @@ test.describe('Mobile: Touch Interactions', () => {
     if (await buttons.count() > 0) {
       const firstButton = buttons.first()
 
-      // Get initial URL
-      const initialUrl = page.url()
-
       // Tap the button
       await firstButton.tap()
 

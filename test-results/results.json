@@ -97,6 +97,2182 @@
   },
   "suites": [
     {
+      "title": "flows/calculate-bake.spec.js",
+      "file": "flows/calculate-bake.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Calculate Bake Flow",
+          "file": "flows/calculate-bake.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should load home page and show calculate option",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a03e903c5921c3ff1d2a-b2cac934078bd6f7797b",
+              "file": "flows/calculate-bake.spec.js",
+              "line": 9,
+              "column": 3
+            },
+            {
+              "title": "should validate target time is required",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a03e903c5921c3ff1d2a-637dadacc635422683bb",
+              "file": "flows/calculate-bake.spec.js",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "should generate schedule with valid inputs",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a03e903c5921c3ff1d2a-a1431c8d1eec7d15b909",
+              "file": "flows/calculate-bake.spec.js",
+              "line": 29,
+              "column": 3
+            },
+            {
+              "title": "should load home page and show calculate option",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a03e903c5921c3ff1d2a-c68f32e61a03aecb934e",
+              "file": "flows/calculate-bake.spec.js",
+              "line": 9,
+              "column": 3
+            },
+            {
+              "title": "should validate target time is required",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a03e903c5921c3ff1d2a-4598114ff6d082dbdd5b",
+              "file": "flows/calculate-bake.spec.js",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "should generate schedule with valid inputs",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a03e903c5921c3ff1d2a-9e5254bba975b7325637",
+              "file": "flows/calculate-bake.spec.js",
+              "line": 29,
+              "column": 3
+            },
+            {
+              "title": "should load home page and show calculate option",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a03e903c5921c3ff1d2a-1ca1cc5d842699e071b9",
+              "file": "flows/calculate-bake.spec.js",
+              "line": 9,
+              "column": 3
+            },
+            {
+              "title": "should validate target time is required",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a03e903c5921c3ff1d2a-dee3b7f4bd521b9ed282",
+              "file": "flows/calculate-bake.spec.js",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "should generate schedule with valid inputs",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "a03e903c5921c3ff1d2a-00c5dc3d7de97b61f093",
+              "file": "flows/calculate-bake.spec.js",
+              "line": 29,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "flows/error-handling.spec.js",
+      "file": "flows/error-handling.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Error Handling & Bug Fixes",
+          "file": "flows/error-handling.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should handle missing template properties gracefully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "dc822325b67d953e7b91-97d9356df7913acc4c8a",
+              "file": "flows/error-handling.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "should handle invalid form inputs without crashing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "dc822325b67d953e7b91-dcf92065753591986418",
+              "file": "flows/error-handling.spec.js",
+              "line": 22,
+              "column": 3
+            },
+            {
+              "title": "should validate type consistency for dates",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "dc822325b67d953e7b91-44e0b846b7c62196f9a5",
+              "file": "flows/error-handling.spec.js",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "should provide user-friendly error messages",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "dc822325b67d953e7b91-598c109d2b81f4617c11",
+              "file": "flows/error-handling.spec.js",
+              "line": 60,
+              "column": 3
+            },
+            {
+              "title": "should handle missing template properties gracefully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "dc822325b67d953e7b91-f68c13d609b622842c70",
+              "file": "flows/error-handling.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "should handle invalid form inputs without crashing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "dc822325b67d953e7b91-cfa198147f47f0227c31",
+              "file": "flows/error-handling.spec.js",
+              "line": 22,
+              "column": 3
+            },
+            {
+              "title": "should validate type consistency for dates",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "dc822325b67d953e7b91-33316209e248d0d8c5fc",
+              "file": "flows/error-handling.spec.js",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "should provide user-friendly error messages",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "dc822325b67d953e7b91-272e05f5329b9a3ba90b",
+              "file": "flows/error-handling.spec.js",
+              "line": 60,
+              "column": 3
+            },
+            {
+              "title": "should handle missing template properties gracefully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "dc822325b67d953e7b91-dcf24e85f03da098a452",
+              "file": "flows/error-handling.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "should handle invalid form inputs without crashing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "dc822325b67d953e7b91-384816a42dad495701d7",
+              "file": "flows/error-handling.spec.js",
+              "line": 22,
+              "column": 3
+            },
+            {
+              "title": "should validate type consistency for dates",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "dc822325b67d953e7b91-e6db5a45607af257f0c3",
+              "file": "flows/error-handling.spec.js",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "should provide user-friendly error messages",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "dc822325b67d953e7b91-3d50772917d32b4bbfdd",
+              "file": "flows/error-handling.spec.js",
+              "line": 60,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "flows/join-existing-bake.spec.js",
+      "file": "flows/join-existing-bake.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Join Existing Bake Flow",
+          "file": "flows/join-existing-bake.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should navigate to join existing bake page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fa125199afb233144524-c2e99a44fb3c61a47cce",
+              "file": "flows/join-existing-bake.spec.js",
+              "line": 9,
+              "column": 3
+            },
+            {
+              "title": "Step 4: StepChecklist should render checkboxes, not JavaScript code",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fa125199afb233144524-b8830c9b0eb24ee9e5b4",
+              "file": "flows/join-existing-bake.spec.js",
+              "line": 20,
+              "column": 3
+            },
+            {
+              "title": "should show validation errors for incomplete form",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fa125199afb233144524-2610bc39b8d19872ef29",
+              "file": "flows/join-existing-bake.spec.js",
+              "line": 57,
+              "column": 3
+            },
+            {
+              "title": "Step 7: Should submit successfully with all fields filled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fa125199afb233144524-f0565f97c88df4a4f41c",
+              "file": "flows/join-existing-bake.spec.js",
+              "line": 77,
+              "column": 3
+            },
+            {
+              "title": "should show error message if submission fails",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fa125199afb233144524-77e85a0ecacae5a10e88",
+              "file": "flows/join-existing-bake.spec.js",
+              "line": 132,
+              "column": 3
+            },
+            {
+              "title": "should navigate to join existing bake page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fa125199afb233144524-1dcc8999b887a3f5ce9d",
+              "file": "flows/join-existing-bake.spec.js",
+              "line": 9,
+              "column": 3
+            },
+            {
+              "title": "Step 4: StepChecklist should render checkboxes, not JavaScript code",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fa125199afb233144524-1391deab5eaacf3f0395",
+              "file": "flows/join-existing-bake.spec.js",
+              "line": 20,
+              "column": 3
+            },
+            {
+              "title": "should show validation errors for incomplete form",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fa125199afb233144524-5f5756f321470fbcf868",
+              "file": "flows/join-existing-bake.spec.js",
+              "line": 57,
+              "column": 3
+            },
+            {
+              "title": "Step 7: Should submit successfully with all fields filled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fa125199afb233144524-c8a4386f11901da3453f",
+              "file": "flows/join-existing-bake.spec.js",
+              "line": 77,
+              "column": 3
+            },
+            {
+              "title": "should show error message if submission fails",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fa125199afb233144524-2f49d76d6e45a775e7d1",
+              "file": "flows/join-existing-bake.spec.js",
+              "line": 132,
+              "column": 3
+            },
+            {
+              "title": "should navigate to join existing bake page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fa125199afb233144524-8f8f721218be8db5b10e",
+              "file": "flows/join-existing-bake.spec.js",
+              "line": 9,
+              "column": 3
+            },
+            {
+              "title": "Step 4: StepChecklist should render checkboxes, not JavaScript code",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fa125199afb233144524-5a8c6716fea7263af7b0",
+              "file": "flows/join-existing-bake.spec.js",
+              "line": 20,
+              "column": 3
+            },
+            {
+              "title": "should show validation errors for incomplete form",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fa125199afb233144524-cb264077107781e99faf",
+              "file": "flows/join-existing-bake.spec.js",
+              "line": 57,
+              "column": 3
+            },
+            {
+              "title": "Step 7: Should submit successfully with all fields filled",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fa125199afb233144524-81b57f364823e0b649ad",
+              "file": "flows/join-existing-bake.spec.js",
+              "line": 77,
+              "column": 3
+            },
+            {
+              "title": "should show error message if submission fails",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "fa125199afb233144524-70e0ac98daf5ff67a1f7",
+              "file": "flows/join-existing-bake.spec.js",
+              "line": 132,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "flows/templates.spec.js",
+      "file": "flows/templates.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Template Management",
+          "file": "flows/templates.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should load templates view",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "840aa0a0f4d97c5c086e-2d176c55f1eca1942692",
+              "file": "flows/templates.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "should display available templates",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "840aa0a0f4d97c5c086e-a1bb6c1bf293dbd10797",
+              "file": "flows/templates.spec.js",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "should load templates view",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "840aa0a0f4d97c5c086e-bbf03ff79214a2d903c4",
+              "file": "flows/templates.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "should display available templates",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "840aa0a0f4d97c5c086e-534a86d4f87ab27ecac0",
+              "file": "flows/templates.spec.js",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "should load templates view",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "840aa0a0f4d97c5c086e-698cb08d7b34883f9012",
+              "file": "flows/templates.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "should display available templates",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "840aa0a0f4d97c5c086e-e88db15f3481e06aec22",
+              "file": "flows/templates.spec.js",
+              "line": 13,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "flows/tracker.spec.js",
+      "file": "flows/tracker.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Tracker View",
+          "file": "flows/tracker.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should load tracker page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ef278c32003c754591b6-fd94cf3e8c03e38620b7",
+              "file": "flows/tracker.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "should display schedule timeline with steps",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ef278c32003c754591b6-0e7f65832d7aa1cbe4ad",
+              "file": "flows/tracker.spec.js",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "should show current step information",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ef278c32003c754591b6-9bd4dcc4497d8e31eda4",
+              "file": "flows/tracker.spec.js",
+              "line": 24,
+              "column": 3
+            },
+            {
+              "title": "should load tracker page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ef278c32003c754591b6-2b5ce0f68d4d1f078c84",
+              "file": "flows/tracker.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "should display schedule timeline with steps",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ef278c32003c754591b6-efa2d981c243c049c829",
+              "file": "flows/tracker.spec.js",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "should show current step information",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ef278c32003c754591b6-53f867b81cd10b8d9c52",
+              "file": "flows/tracker.spec.js",
+              "line": 24,
+              "column": 3
+            },
+            {
+              "title": "should load tracker page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ef278c32003c754591b6-170a0eb25e45608ad2e6",
+              "file": "flows/tracker.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "should display schedule timeline with steps",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ef278c32003c754591b6-19641fcef35f73034e9a",
+              "file": "flows/tracker.spec.js",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "should show current step information",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ef278c32003c754591b6-8cae8dd8621a145e9b58",
+              "file": "flows/tracker.spec.js",
+              "line": 24,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "mobile/accessibility-mobile.spec.js",
+      "file": "mobile/accessibility-mobile.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Mobile: Accessibility (WCAG AA)",
+          "file": "mobile/accessibility-mobile.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should have sufficient color contrast on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-2456d5dbbb1c53b82073",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "should have visible focus indicators",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-e3251042ae941df14ca3",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 20,
+              "column": 3
+            },
+            {
+              "title": "should support keyboard navigation on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-c3ecdeaffbb993ae4d92",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 57,
+              "column": 3
+            },
+            {
+              "title": "should have proper ARIA labels on interactive elements",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-89860801b5782f8eb775",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 78,
+              "column": 3
+            },
+            {
+              "title": "should have semantic HTML structure",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-7e3143cb40ea8943ca57",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 100,
+              "column": 3
+            },
+            {
+              "title": "should handle zoom without breaking on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-746a7fc6b8efa1de9aa3",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 128,
+              "column": 3
+            },
+            {
+              "title": "should have sufficient color contrast on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-538f52a6218d5000c591",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "should have visible focus indicators",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-09a1584aae395ffad066",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 20,
+              "column": 3
+            },
+            {
+              "title": "should support keyboard navigation on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-b79830dea9f406b19e07",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 57,
+              "column": 3
+            },
+            {
+              "title": "should have proper ARIA labels on interactive elements",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-4544863bc3a8593aac48",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 78,
+              "column": 3
+            },
+            {
+              "title": "should have semantic HTML structure",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-56a1973f38d5a31e3f13",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 100,
+              "column": 3
+            },
+            {
+              "title": "should handle zoom without breaking on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-3370fb13e89aa399e838",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 128,
+              "column": 3
+            },
+            {
+              "title": "should have sufficient color contrast on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-e42682193b36788e99ba",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "should have visible focus indicators",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-68ea1f300a81d274d69e",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 20,
+              "column": 3
+            },
+            {
+              "title": "should support keyboard navigation on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-4ce017be46bfd90a48e1",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 57,
+              "column": 3
+            },
+            {
+              "title": "should have proper ARIA labels on interactive elements",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-b79d5720690cf42ff5dd",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 78,
+              "column": 3
+            },
+            {
+              "title": "should have semantic HTML structure",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-2c27cc92ac480335ae66",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 100,
+              "column": 3
+            },
+            {
+              "title": "should handle zoom without breaking on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "0e564d471c6b8ce3f6a3-9bdd79f8429969608c25",
+              "file": "mobile/accessibility-mobile.spec.js",
+              "line": 128,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "mobile/mobile-viewport.spec.js",
+      "file": "mobile/mobile-viewport.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Mobile: Viewport & Responsiveness",
+          "file": "mobile/mobile-viewport.spec.js",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should be responsive on iPhone 12",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-a940ab6b9c44d457787e",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 4,
+              "column": 3
+            },
+            {
+              "title": "should be responsive on Pixel 5",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-ef9ed6d9292647b6a6d2",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "should have readable text on mobile (16px minimum)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-e42647880a9e3b288c50",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 21,
+              "column": 3
+            },
+            {
+              "title": "should not have horizontal scroll on narrow viewport",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-7a37ab39aa5de22d98a3",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "should have proper spacing on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-ac51974adf91237ea156",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 59,
+              "column": 3
+            },
+            {
+              "title": "should handle large text (accessibility) without breaking layout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-4e74550efe2837d1995f",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 83,
+              "column": 3
+            },
+            {
+              "title": "should be responsive on iPhone 12",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-06295e370666d0b9d39d",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 4,
+              "column": 3
+            },
+            {
+              "title": "should be responsive on Pixel 5",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-39d17a12ff78dd3eb91f",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "should have readable text on mobile (16px minimum)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-7144421728388f1372dd",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 21,
+              "column": 3
+            },
+            {
+              "title": "should not have horizontal scroll on narrow viewport",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-5472bfb3d0f33bd4b09e",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "should have proper spacing on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-f16d99600950d0310227",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 59,
+              "column": 3
+            },
+            {
+              "title": "should handle large text (accessibility) without breaking layout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-4cfa6b400b207bce3f32",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 83,
+              "column": 3
+            },
+            {
+              "title": "should be responsive on iPhone 12",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-be9ffd4ccbb4b0e7530c",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 4,
+              "column": 3
+            },
+            {
+              "title": "should be responsive on Pixel 5",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-0fdb622d07b45a1d9673",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "should have readable text on mobile (16px minimum)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-8d2b49aaafb2efdd60fb",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 21,
+              "column": 3
+            },
+            {
+              "title": "should not have horizontal scroll on narrow viewport",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-204dce5384f3b192a2e7",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "should have proper spacing on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-4993e4ce8d2c353dce5e",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 59,
+              "column": 3
+            },
+            {
+              "title": "should handle large text (accessibility) without breaking layout",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "b98c921664875afac5dd-27a3abd5179976686433",
+              "file": "mobile/mobile-viewport.spec.js",
+              "line": 83,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "mobile/touch-interactions.spec.js",
+      "file": "mobile/touch-interactions.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Mobile: Touch Interactions",
+          "file": "mobile/touch-interactions.spec.js",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should have properly sized touch targets (44px minimum)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "cc75b9e62cbc2d09ce42-3e747e3ffc987c5b521a",
+              "file": "mobile/touch-interactions.spec.js",
+              "line": 7,
+              "column": 3
+            },
+            {
+              "title": "should support tapping buttons on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "cc75b9e62cbc2d09ce42-10181642e8b084cca9a5",
+              "file": "mobile/touch-interactions.spec.js",
+              "line": 29,
+              "column": 3
+            },
+            {
+              "title": "should allow scrolling on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "cc75b9e62cbc2d09ce42-51239dfbb7896353cf2c",
+              "file": "mobile/touch-interactions.spec.js",
+              "line": 52,
+              "column": 3
+            },
+            {
+              "title": "should handle form input on mobile keyboard",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "cc75b9e62cbc2d09ce42-e2afe71b7f44c35e3d35",
+              "file": "mobile/touch-interactions.spec.js",
+              "line": 68,
+              "column": 3
+            },
+            {
+              "title": "should close mobile keyboard on escape",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "cc75b9e62cbc2d09ce42-e582a16f61eb08d0b3df",
+              "file": "mobile/touch-interactions.spec.js",
+              "line": 89,
+              "column": 3
+            },
+            {
+              "title": "should have properly sized touch targets (44px minimum)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "cc75b9e62cbc2d09ce42-9e0a9e8119892236f176",
+              "file": "mobile/touch-interactions.spec.js",
+              "line": 7,
+              "column": 3
+            },
+            {
+              "title": "should support tapping buttons on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "cc75b9e62cbc2d09ce42-bb12633fa4b1ddbc8b98",
+              "file": "mobile/touch-interactions.spec.js",
+              "line": 29,
+              "column": 3
+            },
+            {
+              "title": "should allow scrolling on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "cc75b9e62cbc2d09ce42-6728dac49904a97e960c",
+              "file": "mobile/touch-interactions.spec.js",
+              "line": 52,
+              "column": 3
+            },
+            {
+              "title": "should handle form input on mobile keyboard",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "cc75b9e62cbc2d09ce42-21d2aad5db1fa9debd67",
+              "file": "mobile/touch-interactions.spec.js",
+              "line": 68,
+              "column": 3
+            },
+            {
+              "title": "should close mobile keyboard on escape",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "cc75b9e62cbc2d09ce42-84a286842a0feaaf7028",
+              "file": "mobile/touch-interactions.spec.js",
+              "line": 89,
+              "column": 3
+            },
+            {
+              "title": "should have properly sized touch targets (44px minimum)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "cc75b9e62cbc2d09ce42-3568d8a01a5b33973a7f",
+              "file": "mobile/touch-interactions.spec.js",
+              "line": 7,
+              "column": 3
+            },
+            {
+              "title": "should support tapping buttons on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "cc75b9e62cbc2d09ce42-4b61699f57b0f1f6b59f",
+              "file": "mobile/touch-interactions.spec.js",
+              "line": 29,
+              "column": 3
+            },
+            {
+              "title": "should allow scrolling on mobile",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "cc75b9e62cbc2d09ce42-172e3b8d4407b262acb0",
+              "file": "mobile/touch-interactions.spec.js",
+              "line": 52,
+              "column": 3
+            },
+            {
+              "title": "should handle form input on mobile keyboard",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "cc75b9e62cbc2d09ce42-809c092e1ac4c1c79d83",
+              "file": "mobile/touch-interactions.spec.js",
+              "line": 68,
+              "column": 3
+            },
+            {
+              "title": "should close mobile keyboard on escape",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "cc75b9e62cbc2d09ce42-56c6a4a3e2e11f1952d2",
+              "file": "mobile/touch-interactions.spec.js",
+              "line": 89,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
       "title": "smoke.spec.js",
       "file": "smoke.spec.js",
       "column": 0,
@@ -292,14 +2468,708 @@
           ]
         }
       ]
+    },
+    {
+      "title": "visual/baseline-setup.spec.js",
+      "file": "visual/baseline-setup.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Visual Regression: Baselines",
+          "file": "visual/baseline-setup.spec.js",
+          "line": 14,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should capture home page baseline",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "222c20a160396aabb326-fe0252c7210e3493b09c",
+              "file": "visual/baseline-setup.spec.js",
+              "line": 15,
+              "column": 3
+            },
+            {
+              "title": "should capture calculator page baseline",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "222c20a160396aabb326-6436c9a7b37692cc0ec9",
+              "file": "visual/baseline-setup.spec.js",
+              "line": 26,
+              "column": 3
+            },
+            {
+              "title": "should capture join existing bake page baseline",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "222c20a160396aabb326-4e31483ea58aae5be1c2",
+              "file": "visual/baseline-setup.spec.js",
+              "line": 34,
+              "column": 3
+            },
+            {
+              "title": "should capture tracker page baseline",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "222c20a160396aabb326-8a0cd810aaf3fa8d611f",
+              "file": "visual/baseline-setup.spec.js",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "should capture templates page baseline",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "222c20a160396aabb326-822f4b1a230340bc9ff0",
+              "file": "visual/baseline-setup.spec.js",
+              "line": 50,
+              "column": 3
+            },
+            {
+              "title": "should capture home page baseline",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "222c20a160396aabb326-e7e15c789b08567416ea",
+              "file": "visual/baseline-setup.spec.js",
+              "line": 15,
+              "column": 3
+            },
+            {
+              "title": "should capture calculator page baseline",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "222c20a160396aabb326-91b44ab5c04a624e96d2",
+              "file": "visual/baseline-setup.spec.js",
+              "line": 26,
+              "column": 3
+            },
+            {
+              "title": "should capture join existing bake page baseline",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "222c20a160396aabb326-910384343ae40272716b",
+              "file": "visual/baseline-setup.spec.js",
+              "line": 34,
+              "column": 3
+            },
+            {
+              "title": "should capture tracker page baseline",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "222c20a160396aabb326-9bec2b8f4754acc906b9",
+              "file": "visual/baseline-setup.spec.js",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "should capture templates page baseline",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "222c20a160396aabb326-a6849966096cfa35f4d3",
+              "file": "visual/baseline-setup.spec.js",
+              "line": 50,
+              "column": 3
+            },
+            {
+              "title": "should capture home page baseline",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "222c20a160396aabb326-8827669c3f74bbca87c9",
+              "file": "visual/baseline-setup.spec.js",
+              "line": 15,
+              "column": 3
+            },
+            {
+              "title": "should capture calculator page baseline",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "222c20a160396aabb326-f521a40c69ffc3fded93",
+              "file": "visual/baseline-setup.spec.js",
+              "line": 26,
+              "column": 3
+            },
+            {
+              "title": "should capture join existing bake page baseline",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "222c20a160396aabb326-7c46ec8b127a5233ffaf",
+              "file": "visual/baseline-setup.spec.js",
+              "line": 34,
+              "column": 3
+            },
+            {
+              "title": "should capture tracker page baseline",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "222c20a160396aabb326-c0057f29779fc32f8104",
+              "file": "visual/baseline-setup.spec.js",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "should capture templates page baseline",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "222c20a160396aabb326-9bc7fc24aa1e01c59141",
+              "file": "visual/baseline-setup.spec.js",
+              "line": 50,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "visual/layout-regression.spec.js",
+      "file": "visual/layout-regression.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Visual Regression: Layout Detection",
+          "file": "visual/layout-regression.spec.js",
+          "line": 16,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should detect changes on home page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-a187c9fc22abae179f47",
+              "file": "visual/layout-regression.spec.js",
+              "line": 17,
+              "column": 3
+            },
+            {
+              "title": "should detect layout changes on calculator",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-d6fa28722b165c317e56",
+              "file": "visual/layout-regression.spec.js",
+              "line": 26,
+              "column": 3
+            },
+            {
+              "title": "should detect form alignment issues",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-eb55c562af5738219b45",
+              "file": "visual/layout-regression.spec.js",
+              "line": 46,
+              "column": 3
+            },
+            {
+              "title": "should detect color or style changes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-e849b5ea9634de241683",
+              "file": "visual/layout-regression.spec.js",
+              "line": 66,
+              "column": 3
+            },
+            {
+              "title": "should detect responsive layout shifts",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-e59f6d4a4611153241c6",
+              "file": "visual/layout-regression.spec.js",
+              "line": 74,
+              "column": 3
+            },
+            {
+              "title": "should detect spacing changes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-078fa4d35c93d4b082aa",
+              "file": "visual/layout-regression.spec.js",
+              "line": 84,
+              "column": 3
+            },
+            {
+              "title": "should detect changes on home page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-0daaa00cc65a6146b6d1",
+              "file": "visual/layout-regression.spec.js",
+              "line": 17,
+              "column": 3
+            },
+            {
+              "title": "should detect layout changes on calculator",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-7dfe70a12cc94090c0d5",
+              "file": "visual/layout-regression.spec.js",
+              "line": 26,
+              "column": 3
+            },
+            {
+              "title": "should detect form alignment issues",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-475e38025a1cc747ecfe",
+              "file": "visual/layout-regression.spec.js",
+              "line": 46,
+              "column": 3
+            },
+            {
+              "title": "should detect color or style changes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-c4228f99ecdff5d4605d",
+              "file": "visual/layout-regression.spec.js",
+              "line": 66,
+              "column": 3
+            },
+            {
+              "title": "should detect responsive layout shifts",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-671f0b29f60a5f3a8f0c",
+              "file": "visual/layout-regression.spec.js",
+              "line": 74,
+              "column": 3
+            },
+            {
+              "title": "should detect spacing changes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-4a35bf0a5c746de5d169",
+              "file": "visual/layout-regression.spec.js",
+              "line": 84,
+              "column": 3
+            },
+            {
+              "title": "should detect changes on home page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-92f8e5760b4898c4ce07",
+              "file": "visual/layout-regression.spec.js",
+              "line": 17,
+              "column": 3
+            },
+            {
+              "title": "should detect layout changes on calculator",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-712127e3ad72e5c8e2e2",
+              "file": "visual/layout-regression.spec.js",
+              "line": 26,
+              "column": 3
+            },
+            {
+              "title": "should detect form alignment issues",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-0e70abd8aa36ac738804",
+              "file": "visual/layout-regression.spec.js",
+              "line": 46,
+              "column": 3
+            },
+            {
+              "title": "should detect color or style changes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-8a8c4c47349dc4875822",
+              "file": "visual/layout-regression.spec.js",
+              "line": 66,
+              "column": 3
+            },
+            {
+              "title": "should detect responsive layout shifts",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-a99a1951fce3eda0b541",
+              "file": "visual/layout-regression.spec.js",
+              "line": 74,
+              "column": 3
+            },
+            {
+              "title": "should detect spacing changes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "ios",
+                  "projectName": "ios",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "72c48a8816782e7b71f1-8c8ad30c731e0a30c9be",
+              "file": "visual/layout-regression.spec.js",
+              "line": 84,
+              "column": 3
+            }
+          ]
+        }
+      ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-04-06T01:04:17.657Z",
-    "duration": 32.61200000000008,
+    "startTime": "2026-04-06T01:08:43.277Z",
+    "duration": 141.76999999999998,
     "expected": 0,
-    "skipped": 9,
+    "skipped": 144,
     "unexpected": 0,
     "flaky": 0
   }

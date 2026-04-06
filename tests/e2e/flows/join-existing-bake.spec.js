@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { goToPage, clickButton, checkCheckbox, uncheckCheckbox, fillInput, selectOption, expectTextVisible, expectTextNotVisible } from '../helpers/ui-helpers'
+import { goToPage, clickButton, checkCheckbox, expectTextVisible } from '../helpers/ui-helpers'
 
 test.describe('Join Existing Bake Flow', () => {
   test.beforeEach(async ({ page }) => {

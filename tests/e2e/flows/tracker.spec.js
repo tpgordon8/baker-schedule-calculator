@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { goToPage, expectTextVisible, clickButton } from '../helpers/ui-helpers'
+import { goToPage } from '../helpers/ui-helpers'
 
 test.describe('Tracker View', () => {
   test('should load tracker page', async ({ page }) => {
@@ -23,9 +23,6 @@ test.describe('Tracker View', () => {
 
   test('should show current step information', async ({ page }) => {
     await goToPage(page, '/tracker')
-
-    // Should display current step or progress indicator
-    const currentStepIndicator = page.locator('[class*="current"], [class*="active"], [class*="progress"]')
 
     // Check if page has content (even if empty, it should render)
     const pageContent = await page.locator('body').textContent()

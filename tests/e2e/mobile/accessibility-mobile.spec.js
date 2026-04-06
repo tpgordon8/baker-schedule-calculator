@@ -42,11 +42,6 @@ test.describe('Mobile: Accessibility (WCAG AA)', () => {
 
     // Should have some kind of focus indication
     if (focusedElement) {
-      const hasFocusStyle =
-        focusedElement.outline ||
-        focusedElement.boxShadow ||
-        focusedElement.outlineWidth !== '0px'
-
       // Either outline or box-shadow should be visible
       expect(
         focusedElement.outline?.length > 0 || focusedElement.boxShadow?.length > 0
@@ -57,8 +52,6 @@ test.describe('Mobile: Accessibility (WCAG AA)', () => {
   test('should support keyboard navigation on mobile', async ({ page }) => {
     page.setViewportSize({ width: 375, height: 667 })
     await page.goto('/')
-
-    const initialFocus = await page.evaluate(() => document.activeElement?.tagName)
 
     // Tab through elements
     await page.keyboard.press('Tab')

@@ -1,0 +1,72 @@
+/* Warm Caramel Color System */
+:root {
+  /* Primary Brand Colors */
+  --primary: #D4A574;
+  --primary-dark: #C49464;
+  --primary-light: #E8C4A0;
+
+  /* Status Colors */
+  --status-success: #27AE60;
+  --status-warning: #F39C12;
+  --status-active: #3498DB;
+  --status-alert: #E74C3C;
+
+  /* Surfaces & Backgrounds */
+  --surface-bg: #FDFBF9;
+  --surface-secondary: #F5F3F0;
+  --surface-tertiary: #EAE5E0;
+
+  /* Text Colors - Hierarchy */
+  --text-primary: #1A1815;
+  --text-secondary: #2D2A27;
+  --text-tertiary: #6B6560;
+  --text-disabled: #BDC3C7;
+
+  /* Borders & Dividers */
+  --border-primary: #D4CDCA;
+  --border-secondary: #B5ADAA;
+  --border-tertiary: #8B8680;
+
+  /* Neutral Scale - Warm Grays */
+  --neutral-50: #FDFBF9;
+  --neutral-100: #F5F3F0;
+  --neutral-200: #EAE5E0;
+  --neutral-300: #D4CDCA;
+  --neutral-400: #B5ADAA;
+  --neutral-500: #8B8680;
+  --neutral-600: #6B6560;
+  --neutral-700: #4A4540;
+  --neutral-800: #2D2A27;
+  --neutral-900: #1A1815;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 2px 8px rgba(26, 24, 21, 0.06);
+  --shadow-lg: 0 4px 16px rgba(26, 24, 21, 0.1);
+  --shadow-xl: 0 8px 24px rgba(26, 24, 21, 0.15);
+
+  /* Activity-Specific Colors */
+  --activity-poop-color: #8B7355;
+  --activity-poop-bg: #F5F1ED;
+  --activity-pee-color: #3498DB;
+  --activity-pee-bg: #EBF5FB;
+  --activity-food-color: #E67E22;
+  --activity-food-bg: #FDF1E8;
+  --activity-sleep-color: #7B68EE;
+  --activity-sleep-bg: #F0EDFD;
+  --activity-meds-color: #E74C3C;
+  --activity-meds-bg: #FDECEB;
+  --activity-walk-color: #27AE60;
+  --activity-walk-bg: #E8F6EF;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #F5F3F0;
+    --text-secondary: #E8C4A0;
+    --text-tertiary: #D4CDCA;
+    --surface-bg: #1A1815;
+    --surface-secondary: #2D2A27;
+  }
+}

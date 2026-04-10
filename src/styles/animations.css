@@ -1,0 +1,402 @@
+/* Animation System - Micro-interactions and Transitions */
+/* All animations respect prefers-reduced-motion for accessibility */
+
+@layer utilities {
+  /* ============================================
+     KEYFRAME DEFINITIONS
+     ============================================ */
+
+  @keyframes button-lift {
+    from {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(212, 165, 116, 0.15);
+    }
+    to {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(212, 165, 116, 0.25);
+    }
+  }
+
+  @keyframes button-press {
+    from {
+      transform: translateY(-2px);
+    }
+    to {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(212, 165, 116, 0.2);
+    }
+  }
+
+  @keyframes status-pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes status-pulse-warning {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 6px rgba(243, 156, 18, 0.4);
+    }
+    50% {
+      opacity: 0.6;
+      box-shadow: 0 0 12px rgba(243, 156, 18, 0.6);
+    }
+  }
+
+  @keyframes status-blink {
+    0%, 49%, 100% {
+      opacity: 1;
+    }
+    50%, 99% {
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes form-error-slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+      max-height: 0;
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      max-height: 200px;
+    }
+  }
+
+  @keyframes form-success-pop {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    70% {
+      transform: scale(1.05);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes loading-shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  @keyframes card-hover-elevation {
+    from {
+      box-shadow: 0 2px 8px rgba(26, 24, 21, 0.06);
+      border-color: var(--neutral-200);
+    }
+    to {
+      box-shadow: 0 4px 16px rgba(26, 24, 21, 0.12);
+      border-color: var(--primary-light);
+    }
+  }
+
+  @keyframes input-focus-ring {
+    from {
+      border-color: var(--neutral-300);
+      box-shadow: 0 0 0 0 var(--primary);
+    }
+    to {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+    }
+  }
+
+  @keyframes progress-fill-animate {
+    from {
+      width: 0%;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ============================================
+     BUTTON ANIMATIONS
+     ============================================ */
+
+  .btn {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn:hover:not(:disabled) {
+    animation: button-lift 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .btn:active:not(:disabled) {
+    animation: button-press 0.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* ============================================
+     CARD ANIMATIONS
+     ============================================ */
+
+  .card,
+  .card-premium,
+  .card-accent,
+  .card-status {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card:hover,
+  .card-premium:hover,
+  .card-accent:hover,
+  .card-status:hover {
+    animation: card-hover-elevation 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* ============================================
+     INPUT ANIMATIONS
+     ============================================ */
+
+  .input-text {
+    transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .input-text:focus {
+    animation: input-focus-ring 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* ============================================
+     STATUS INDICATOR ANIMATIONS
+     ============================================ */
+
+  /* Pulse animation for warning status */
+  .status-dot-warning {
+    animation: status-pulse-warning 2s ease-in-out infinite;
+  }
+
+  /* Blink animation for alert status */
+  .status-dot-alert {
+    animation: status-blink 1s ease-in-out infinite;
+  }
+
+  /* Generic pulse effect */
+  .animate-pulse {
+    animation: status-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* ============================================
+     FORM FEEDBACK ANIMATIONS
+     ============================================ */
+
+  .form-error {
+    animation: form-error-slide-down 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .form-success {
+    animation: form-success-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* ============================================
+     LOADING ANIMATIONS
+     ============================================ */
+
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--surface-secondary) 0%,
+      var(--surface-bg) 50%,
+      var(--surface-secondary) 100%
+    );
+    background-size: 1000px 100%;
+    animation: loading-shimmer 2s infinite;
+  }
+
+  /* Loading spinner animation */
+  .spinner {
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* ============================================
+     PROGRESS BAR ANIMATIONS
+     ============================================ */
+
+  .progress-bar-fill {
+    animation: progress-fill-animate 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ============================================
+     ENTRANCE ANIMATIONS
+     ============================================ */
+
+  .animate-fade-in {
+    animation: fade-in 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-slide-down {
+    animation: slide-down 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ============================================
+     BADGE ANIMATIONS
+     ============================================ */
+
+  .badge {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .badge:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* ============================================
+     ACCESSIBILITY: PREFERS REDUCED MOTION
+     ============================================ */
+
+  @media (prefers-reduced-motion: reduce) {
+    /* Disable all animations for users who prefer reduced motion */
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    /* Keep transitions extremely minimal */
+    .btn,
+    .input-text,
+    .card,
+    .card-primary,
+    .card-accent,
+    .card-status {
+      transition: none !important;
+    }
+  }
+
+  /* ============================================
+     RESPONSIVE ANIMATION ADJUSTMENTS
+     ============================================ */
+
+  @media (max-width: 640px) {
+    /* Slightly faster animations on mobile */
+    .btn {
+      transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .input-text {
+      transition: border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  /* ============================================
+     DARK MODE ANIMATION ADJUSTMENTS
+     ============================================ */
+
+  @media (prefers-color-scheme: dark) {
+    @keyframes loading-shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+
+    .skeleton {
+      background: linear-gradient(
+        90deg,
+        var(--neutral-700) 0%,
+        var(--neutral-600) 50%,
+        var(--neutral-700) 100%
+      );
+      background-size: 1000px 100%;
+    }
+  }
+
+  /* ============================================
+     MODAL/OVERLAY ANIMATIONS
+     ============================================ */
+
+  .modal-overlay {
+    animation: fade-in 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .modal-content {
+    animation: slide-up 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ============================================
+     LIST/ITEM ANIMATIONS
+     ============================================ */
+
+  .list-item {
+    animation: slide-up 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Stagger animation for lists */
+  .list-item:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .list-item:nth-child(2) {
+    animation-delay: 0.05s;
+  }
+
+  .list-item:nth-child(3) {
+    animation-delay: 0.1s;
+  }
+
+  .list-item:nth-child(n + 4) {
+    animation-delay: calc((var(--index, 3) - 3) * 0.05s);
+  }
+}

@@ -1,23 +1,32 @@
 <template>
-  <div class="space-y-2">
-    <div class="flex justify-between items-center text-sm">
-      <span class="font-bold">Progress</span>
-      <span class="text-gray-600">{{ completedSteps }} / {{ totalSteps }}</span>
+  <div class="space-y-3">
+    <div class="flex justify-between items-center">
+      <span class="text-body-medium font-semibold text-primary">Progress</span>
+      <span class="text-caption text-secondary">{{ completedSteps }} / {{ totalSteps }}</span>
     </div>
-    <div class="w-full bg-gray-200 border border-gray-300 h-6 relative overflow-hidden">
-      <div
-        class="bg-gray-900 h-full transition-all"
-        :style="{ width: progressPercent + '%' }"
-      ></div>
-      <div class="absolute inset-0 flex items-center justify-center">
-        <span class="text-xs font-bold text-white drop-shadow">
-          {{ progressPercent }}%
-        </span>
+
+    <div class="progress-bar-labeled">
+      <div class="progress-bar" :class="{ 'success': progressPercent === 100 }">
+        <div
+          class="progress-bar-fill"
+          :style="{ width: progressPercent + '%' }"
+          role="progressbar"
+          :aria-valuenow="progressPercent"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
       </div>
+      <span class="text-label font-bold text-primary">{{ progressPercent }}%</span>
     </div>
-    <div class="text-xs text-gray-600">
+
+    <div class="text-caption text-secondary">
       <span v-if="remainingSteps > 0">{{ remainingSteps }} steps remaining</span>
-      <span v-else class="text-green-700 font-bold">✓ All steps complete!</span>
+      <span v-else class="badge badge-success">
+        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg>
+        All steps complete!
+      </span>
     </div>
   </div>
 </template>

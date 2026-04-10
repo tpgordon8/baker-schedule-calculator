@@ -1,0 +1,531 @@
+/* Design System Component Styles */
+/* Comprehensive component library with multiple variants */
+
+@layer components {
+  /* ============================================
+     BUTTON VARIANTS
+     ============================================ */
+
+  /* Base button styles */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-semibold transition-all duration-200 cursor-pointer;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    focus-ring-color: var(--primary);
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Primary button: Warm caramel gradient */
+  .btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    border: 1.5px solid var(--primary-dark);
+    box-shadow: 0 2px 8px rgba(212, 165, 116, 0.15);
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.25);
+    transform: translateY(-2px);
+  }
+
+  .btn-primary:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(212, 165, 116, 0.2);
+  }
+
+  /* Secondary button: Neutral outline */
+  .btn-secondary {
+    background-color: var(--surface-secondary);
+    border: 1.5px solid var(--neutral-300);
+    color: var(--text-primary);
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    background-color: var(--neutral-200);
+    border-color: var(--neutral-400);
+  }
+
+  .btn-secondary:active:not(:disabled) {
+    background-color: var(--neutral-300);
+  }
+
+  /* Ghost button: Minimal text-based */
+  .btn-ghost {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1.5px solid transparent;
+  }
+
+  .btn-ghost:hover:not(:disabled) {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+  }
+
+  .btn-ghost:active:not(:disabled) {
+    background-color: rgba(212, 165, 116, 0.15);
+  }
+
+  /* Status button variants */
+  .btn-success {
+    background-color: var(--status-success);
+    color: white;
+    border: 1.5px solid var(--status-success);
+    box-shadow: 0 2px 8px rgba(39, 174, 96, 0.15);
+  }
+
+  .btn-success:hover:not(:disabled) {
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.25);
+    transform: translateY(-2px);
+  }
+
+  .btn-warning {
+    background-color: var(--status-warning);
+    color: white;
+    border: 1.5px solid var(--status-warning);
+    box-shadow: 0 2px 8px rgba(243, 156, 18, 0.15);
+  }
+
+  .btn-warning:hover:not(:disabled) {
+    box-shadow: 0 4px 12px rgba(243, 156, 18, 0.25);
+    transform: translateY(-2px);
+  }
+
+  .btn-alert {
+    background-color: var(--status-alert);
+    color: white;
+    border: 1.5px solid var(--status-alert);
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.15);
+  }
+
+  .btn-alert:hover:not(:disabled) {
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.25);
+    transform: translateY(-2px);
+  }
+
+  .btn-active {
+    background-color: var(--status-active);
+    color: white;
+    border: 1.5px solid var(--status-active);
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.15);
+  }
+
+  .btn-active:hover:not(:disabled) {
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.25);
+    transform: translateY(-2px);
+  }
+
+  /* Size variants */
+  .btn-sm {
+    @apply px-3 py-1.5 text-sm;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3.5 text-lg;
+  }
+
+  /* Loading state */
+  .btn.loading {
+    @apply opacity-75 cursor-wait;
+  }
+
+  /* ============================================
+     CARD VARIANTS
+     ============================================ */
+
+  /* Premium card: Main content container */
+  .card-premium {
+    background: linear-gradient(135deg, var(--surface-bg) 0%, var(--surface-secondary) 100%);
+    border: 1px solid var(--neutral-200);
+    @apply p-6 rounded-lg transition-all duration-200;
+    box-shadow: 0 2px 8px rgba(26, 24, 21, 0.06);
+  }
+
+  .card-premium:hover {
+    box-shadow: 0 4px 16px rgba(26, 24, 21, 0.12);
+    border-color: var(--primary-light);
+  }
+
+  /* Standard card */
+  .card {
+    @apply p-4 rounded-lg transition-all duration-200;
+    background: var(--surface-bg);
+    border: 1px solid var(--neutral-200);
+    box-shadow: 0 2px 8px rgba(26, 24, 21, 0.04);
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 12px rgba(26, 24, 21, 0.08);
+  }
+
+  /* Accent card: Highlighted content with left bar */
+  .card-accent {
+    @apply p-4 rounded-lg transition-all duration-200;
+    background: var(--surface-secondary);
+    border-left: 4px solid var(--primary);
+    border-top: 1px solid var(--neutral-200);
+    border-right: 1px solid var(--neutral-200);
+    border-bottom: 1px solid var(--neutral-200);
+    box-shadow: 0 2px 6px rgba(212, 165, 116, 0.08);
+  }
+
+  .card-accent:hover {
+    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.12);
+  }
+
+  /* Status card: Activity status with indicator */
+  .card-status {
+    @apply p-4 rounded-lg transition-all duration-200;
+    background: var(--surface-bg);
+    border: 1px solid var(--neutral-200);
+    @apply flex items-center justify-between;
+  }
+
+  .card-status:hover {
+    box-shadow: 0 2px 8px rgba(26, 24, 21, 0.06);
+  }
+
+  /* ============================================
+     BADGE AND STATUS INDICATOR STYLES
+     ============================================ */
+
+  /* Badge: Inline status label */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold transition-colors duration-200;
+    background-color: var(--surface-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--neutral-300);
+  }
+
+  .badge-success {
+    background-color: rgba(39, 174, 96, 0.1);
+    color: var(--status-success);
+    border-color: rgba(39, 174, 96, 0.2);
+  }
+
+  .badge-warning {
+    background-color: rgba(243, 156, 18, 0.1);
+    color: var(--status-warning);
+    border-color: rgba(243, 156, 18, 0.2);
+  }
+
+  .badge-active {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: var(--status-active);
+    border-color: rgba(52, 152, 219, 0.2);
+  }
+
+  .badge-alert {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: var(--status-alert);
+    border-color: rgba(231, 76, 60, 0.2);
+  }
+
+  /* Status dot indicator */
+  .status-dot {
+    @apply inline-block w-2.5 h-2.5 rounded-full;
+  }
+
+  .status-dot-success {
+    background-color: var(--status-success);
+    box-shadow: 0 0 6px rgba(39, 174, 96, 0.4);
+  }
+
+  .status-dot-warning {
+    background-color: var(--status-warning);
+    box-shadow: 0 0 6px rgba(243, 156, 18, 0.4);
+  }
+
+  .status-dot-active {
+    background-color: var(--status-active);
+    box-shadow: 0 0 6px rgba(52, 152, 219, 0.4);
+  }
+
+  .status-dot-alert {
+    background-color: var(--status-alert);
+    box-shadow: 0 0 6px rgba(231, 76, 60, 0.4);
+  }
+
+  .status-dot-pending {
+    background-color: var(--neutral-400);
+    box-shadow: 0 0 6px rgba(107, 101, 96, 0.3);
+  }
+
+  /* ============================================
+     INPUT FIELD STYLES
+     ============================================ */
+
+  .input-text {
+    @apply w-full px-4 py-2.5 rounded-lg text-base transition-all duration-200;
+    border: 1.5px solid var(--neutral-300);
+    background-color: var(--surface-bg);
+    color: var(--text-primary);
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    focus-ring-color: var(--primary);
+  }
+
+  .input-text::placeholder {
+    color: var(--text-tertiary);
+  }
+
+  .input-text:disabled {
+    background-color: var(--surface-secondary);
+    color: var(--text-disabled);
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  /* Input success variant */
+  .input-text.success {
+    border-color: var(--status-success);
+    background-color: rgba(39, 174, 96, 0.02);
+  }
+
+  .input-text.success:focus {
+    border-color: var(--status-success);
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+  }
+
+  /* Input error variant */
+  .input-text.error {
+    border-color: var(--status-alert);
+    background-color: rgba(231, 76, 60, 0.02);
+  }
+
+  .input-text.error:focus {
+    border-color: var(--status-alert);
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+  }
+
+  /* Input warning variant */
+  .input-text.warning {
+    border-color: var(--status-warning);
+    background-color: rgba(243, 156, 18, 0.02);
+  }
+
+  .input-text.warning:focus {
+    border-color: var(--status-warning);
+    box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.1);
+  }
+
+  /* Select/dropdown styling */
+  select.input-text {
+    @apply appearance-none pr-10;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
+  }
+
+  select.input-text:focus {
+    background-color: var(--surface-bg);
+  }
+
+  /* ============================================
+     PROGRESS BAR STYLES
+     ============================================ */
+
+  .progress-bar {
+    @apply w-full rounded-full h-2 overflow-hidden;
+    background-color: var(--neutral-200);
+    box-shadow: inset 0 1px 3px rgba(26, 24, 21, 0.1);
+  }
+
+  .progress-bar-fill {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
+    height: 100%;
+    @apply transition-all duration-300;
+    box-shadow: 0 0 8px rgba(212, 165, 116, 0.4);
+  }
+
+  .progress-bar.success .progress-bar-fill {
+    background: linear-gradient(90deg, var(--status-success) 0%, #229954 100%);
+    box-shadow: 0 0 8px rgba(39, 174, 96, 0.4);
+  }
+
+  .progress-bar.warning .progress-bar-fill {
+    background: linear-gradient(90deg, var(--status-warning) 0%, #d68910 100%);
+    box-shadow: 0 0 8px rgba(243, 156, 18, 0.4);
+  }
+
+  .progress-bar.alert .progress-bar-fill {
+    background: linear-gradient(90deg, var(--status-alert) 0%, #c0392b 100%);
+    box-shadow: 0 0 8px rgba(231, 76, 60, 0.4);
+  }
+
+  /* Progress bar with label */
+  .progress-bar-labeled {
+    @apply flex items-center gap-3;
+  }
+
+  .progress-bar-labeled .progress-bar {
+    @apply flex-1;
+  }
+
+  .progress-bar-label {
+    @apply text-xs font-semibold whitespace-nowrap;
+    color: var(--text-primary);
+  }
+
+  /* ============================================
+     FORM GROUP AND LAYOUT STYLES
+     ============================================ */
+
+  .form-group {
+    @apply flex flex-col gap-1.5;
+  }
+
+  .form-label {
+    @apply text-label font-semibold;
+    color: var(--text-primary);
+  }
+
+  .form-label.required::after {
+    content: '*';
+    color: var(--status-alert);
+    margin-left: 4px;
+  }
+
+  .form-help {
+    @apply text-xs;
+    color: var(--text-tertiary);
+  }
+
+  .form-error {
+    @apply text-xs font-semibold;
+    color: var(--status-alert);
+  }
+
+  .form-success {
+    @apply text-xs font-semibold;
+    color: var(--status-success);
+  }
+
+  /* ============================================
+     ALERT AND NOTIFICATION STYLES
+     ============================================ */
+
+  .alert {
+    @apply p-4 rounded-lg border-l-4;
+    @apply flex items-start gap-3;
+  }
+
+  .alert-success {
+    background-color: rgba(39, 174, 96, 0.05);
+    border-color: var(--status-success);
+  }
+
+  .alert-warning {
+    background-color: rgba(243, 156, 18, 0.05);
+    border-color: var(--status-warning);
+  }
+
+  .alert-info {
+    background-color: rgba(52, 152, 219, 0.05);
+    border-color: var(--status-active);
+  }
+
+  .alert-error {
+    background-color: rgba(231, 76, 60, 0.05);
+    border-color: var(--status-alert);
+  }
+
+  .alert-icon {
+    @apply flex-shrink-0 w-5 h-5 mt-0.5;
+    color: currentColor;
+  }
+
+  .alert-content {
+    @apply flex-1;
+  }
+
+  .alert-title {
+    @apply font-semibold mb-1;
+    color: var(--text-primary);
+  }
+
+  .alert-description {
+    @apply text-sm;
+    color: var(--text-secondary);
+  }
+
+  /* ============================================
+     DIVIDER AND SEPARATOR STYLES
+     ============================================ */
+
+  .divider {
+    @apply border-t;
+    border-color: var(--neutral-200);
+  }
+
+  .divider-primary {
+    border-color: var(--primary-light);
+  }
+
+  /* ============================================
+     SHADOW ELEVATION SYSTEM
+     ============================================ */
+
+  .shadow-elevation-1 {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .shadow-elevation-2 {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-elevation-3 {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-elevation-4 {
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* ============================================
+     ACCESSIBILITY: HIGH CONTRAST MODE
+     ============================================ */
+
+  @media (prefers-contrast: more) {
+    .btn-primary,
+    .btn-success,
+    .btn-warning,
+    .btn-alert,
+    .btn-active {
+      border-width: 2px;
+    }
+
+    .input-text {
+      border-width: 2px;
+    }
+
+    .card,
+    .card-premium,
+    .card-accent {
+      border-width: 2px;
+    }
+  }
+
+  /* ============================================
+     DARK MODE SUPPORT
+     ============================================ */
+
+  @media (prefers-color-scheme: dark) {
+    .btn {
+      @apply focus:ring-offset-transparent;
+    }
+
+    .card-premium,
+    .card {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-premium:hover,
+    .card:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .progress-bar {
+      background-color: var(--neutral-700);
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+  }
+}

@@ -1,6 +1,7 @@
 /* Import new design system foundation */
 @import '../styles/colors.css';
 @import '../styles/typography-refined.css';
+@import '../styles/design-system.css';
 
 @tailwind base;
 @tailwind components;
